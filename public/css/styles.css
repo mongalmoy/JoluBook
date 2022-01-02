@@ -1,0 +1,391 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#root {
+    background: #E0E0E0;
+    height: 100vh;
+    z-index: -1;
+}
+
+.container-fluid .navbar-brand {
+    width: 100%;
+    font-size: 35px;
+}
+
+.container-fluid img {
+    height: 50px;
+    margin-left: 20px;
+    padding-right: 10px;
+}
+
+#navbarNav {
+    margin-left: 1000px;
+    font-size: 25px;
+}
+
+
+/******************* Register Page Begins ************************/
+
+.register-page {
+    background-image: linear-gradient(to right, rgb(7, 161, 189) , rgb(28, 29, 124));
+    z-index: 0;
+}
+
+.register-page .row {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+}
+
+.register-page .row .col-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row .col-6 .left-div .logo {
+    padding: 20px;
+    margin: 0 20px;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .col-6 .left-div .logo img {
+    border-radius: 50%;
+    height: 150px;
+}
+
+.row .col-6 .left-div .name {
+    padding: 0 20px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .col-6 .left-div .name p {
+    margin: 10px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.row .col-6 .left-div .welcome {
+    padding: 0 20px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .col-6 .left-div .welcome p {
+    font-size: 35px;
+    padding: 10px;
+    font-weight: 800px;
+}
+
+.row .col-6 .left-div .about-us {
+    padding: 0 20px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .col-6 .left-div .about-us a {
+    background-color: #fff;
+    color: #3d3939;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 20px;
+    transition: all ease 0.5s;
+}
+
+.row .col-6 .left-div .about-us a:hover {
+    width: 160px;
+}
+
+.row .col-6 .right-div {
+    width: 650px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.row .col-6 .right-div .form-div {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.form-div form .register-form .heading-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    color: black;
+}
+
+.form-div form .register-form .heading-div h1 {
+    font-weight: 800;
+}
+
+.form-div form .register-form .input-name {
+    margin-bottom: 10px;
+}
+
+.form-div form .register-form .input-name input {
+    outline: none;
+    width: 450px;
+    height: 35px;
+    color: #041C32;
+    padding-left: 5px;
+}
+
+.form-div form .register-form .input-year select {
+    color: #5c6063;
+    outline: none;
+    width: 150px;
+    height: 35px;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .input-year .input-department {
+    color: #5c6063;
+    outline: none;
+    width: 290px;
+    height: 35px;
+    padding-left: 5px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .current-position input {
+    outline: none;
+    width: 450px;
+    height: 35px;
+    color: #041C32;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .input-email input {
+    outline: none;
+    width: 450px;
+    height: 35px;
+    color: #041C32;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .input-password input {
+    outline: none;
+    width: 450px;
+    height: 35px;
+    color: #041C32;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .register-button {
+    height: 100px;
+    position: relative;
+}
+
+.form-div form .register-form .register-button button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #475455;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.right-div .convert-div p {
+    color: #5c6063;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.right-div .convert-div p span a {
+    text-decoration: none;
+}
+
+/******************* Register Page Ends *************************/
+
+
+
+.chatbox {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.chatbox .feed {
+    width: 600px;
+    background-color: #fff;
+    color: rgb(73, 71, 71);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.chatbox .feed .user-info {
+    margin: 0;
+    padding: 0;
+}
+/* 99A799 */
+.chatbox .feed .user-info p {
+    margin: 0;
+    padding: 0;
+}
+
+.chatbox .feed .user-name {
+    color: black;
+    font-weight: 400;
+}
+
+.chatbox .feed .user-info .user-bio {
+    color: #99A799;
+    font-size: 12px;
+}
+
+.chatbox .feed .user-info svg {
+    color: #99A799;
+    font-size: 12px;
+    display: inline;
+}
+
+.chatbox .feed .user-info .post-time {
+    color: #99A799;
+    font-size: 12px;
+    display: inline;
+    margin-left: 3px;
+}
+
+.chatbox .feed .user-chatbox {
+    margin: 0;
+    padding: 0;
+
+}
+
+.owner-profile {
+    width: 380px;
+    height: 450px;
+    color: #fff;
+    position: absolute;
+    left: 580px;
+    bottom: 110px;
+    border-radius: 30px;
+    box-shadow: 10px 15px 20px grey;
+    z-index: 1;
+    background-color: #202431;
+    visibility: hidden;
+}
+
+.owner-profile .profile-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 5px;
+    margin-top: 10px;
+}
+
+.owner-profile .profile-img img {
+    border-radius: 50%;
+    outline: none;
+    height: 130px;
+}
+
+.owner-profile .profile-details {
+    padding: 10px 0px;
+    padding-top: 0;
+}
+
+.owner-profile .profile-details h1 {
+    font-size: 28px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.owner-profile .profile-details .batch-year {
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.owner-profile .profile-details h3 {
+    font-size: 15px;
+    text-align: center;
+}
+
+.owner-profile .social-media-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.owner-profile .social-media-details ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 100px;
+}
+
+.social-media-details ul li a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.social-media-details ul li i{
+    font-size: 30px;
+    margin: 0 15px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #041C32;
+    color: #fff;
+    z-index: 1;
+}
+
+.footer p {
+    margin: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.footer p a {
+    text-decoration: none;
+    color: #fff;
+}
