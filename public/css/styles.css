@@ -241,13 +241,13 @@
 
 
 
-.chatbox {
+#root .chatbox {
     display: flex;
     justify-content: center;
     margin-top: 6px;
 }
 
-.chatbox .feed {
+#root .chatbox .feed {
     width: 600px;
     background-color: #fff;
     color: rgb(73, 71, 71);
@@ -255,46 +255,47 @@
     border-radius: 10px;
 }
 
-.chatbox .feed .user-info {
+#root .chatbox .feed .user-info {
     margin: 0;
     padding: 0;
 }
 /* 99A799 */
-.chatbox .feed .user-info p {
+#root .chatbox .feed .user-info p {
     margin: 0;
     padding: 0;
 }
 
-.chatbox .feed .user-name {
+#root .chatbox .feed .user-name {
     color: black;
     font-weight: 400;
 }
 
-.chatbox .feed .user-info .user-bio {
+#root .chatbox .feed .user-info .user-bio {
     color: #99A799;
     font-size: 12px;
 }
 
-.chatbox .feed .user-info svg {
+#root .chatbox .feed .user-info svg {
     color: #99A799;
     font-size: 12px;
     display: inline;
 }
 
-.chatbox .feed .user-info .post-time {
+#root .chatbox .feed .user-info .post-time {
     color: #99A799;
     font-size: 12px;
     display: inline;
     margin-left: 3px;
 }
 
-.chatbox .feed .user-chatbox {
+#root .chatbox .feed .user-chatbox {
     margin: 0;
     padding: 0;
 
 }
 
-.owner-profile {
+
+#root .owner-profile {
     width: 380px;
     height: 450px;
     color: #fff;
@@ -305,10 +306,10 @@
     box-shadow: 10px 15px 20px grey;
     z-index: 1;
     background-color: #202431;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
-.owner-profile .profile-img {
+#root .owner-profile .profile-img {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,7 +317,7 @@
     margin-top: 10px;
 }
 
-.owner-profile .profile-img img {
+#root .owner-profile .profile-img img {
     border-radius: 50%;
     outline: none;
     height: 130px;
