@@ -1,6 +1,15 @@
 
 <%- include('partials/header'); -%>
 
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block"; 
+    }
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
+
 <div class="chatbox">
     <div class="feed">
 
@@ -18,16 +27,19 @@
     </div>
 </div>
 
-<div class="write-post">
-    <div>
-        <p>Write your post here:</p>
-    </div>
-    <div class="post-body">
-        <textarea name="inputText"  cols="30" rows="4"></textarea>
-    </div>
-    <div>
-        <button type="submit" ><i class='bx bx-plus-medical'></i></button>
-    </div>
-</div>
+
+<button class="open-button" onclick="openForm()">Open Form</button>
+
+<div class="form-popup" id="myForm">
+    <form action="" class="form-container">
+  
+      <label for="email"><b>Enter your post here:</b></label>
+      <textarea name="inputText" cols="30" rows="5"></textarea>
+  
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+    </form>
+  </div>
 
 <%- include('partials/footer'); -%>
