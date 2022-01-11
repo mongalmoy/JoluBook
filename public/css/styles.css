@@ -360,6 +360,7 @@
 /**************** Post Box Ends **************/
 
 
+/******************* Owner Profile Starts ******************/
 #root .owner-profile {
     width: 380px;
     height: 450px;
@@ -371,7 +372,7 @@
     box-shadow: 10px 15px 20px grey;
     z-index: 1;
     background-color: #202431;
-    /* visibility: hidden; */
+    display: none;
 }
 
 #root .owner-profile .profile-img {
@@ -433,6 +434,7 @@
     font-size: 30px;
     margin: 0 15px;
 }
+/**************** Owner Profile Ends ******************/
 
 
 /*********** Footer Starts **************/
@@ -453,8 +455,13 @@
     font-size: 15px;
 }
 
-.footer p a {
+.footer p span {
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
+}
+
+.footer p span:hover {
+    color: rgb(62, 250, 250);
 }
 /***************** Footer Ends ****************/

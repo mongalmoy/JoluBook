@@ -1,6 +1,65 @@
+    
+    <div class="owner-profile" id="mongalmoy-profile">
+        <div class="profile-img">
+            <img src="images/mongalmoy_img.jpg" ></img>
+        </div>
+        <div class="profile-details">
+          <h1>Mongalmoy Karmakar</h1>
+          <h3 class="batch-year">JGEC ME'22</h3>
+          <h3>mongalmoykarmakar@gmail.com</h3>
+          <h3>+91-9064914585</h3>
+        </div>
+        <div class="social-media-details">
+          <ul>
+            <li><a href="https://www.linkedin.com/in/mongalmoy-karmakar-20595a205/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
+            <li><a href="https://github.com/mongalmoy" target="_blank"><i class='bx bxl-github'></i></a></li>
+            <li><a href="https://www.instagram.com/iam_mongalmoy/" target="_blank"><i class='bx bxl-instagram' ></i></a></li>
+          </ul>
+        </div>
+    </div>
+
+
+
+    <div class="owner-profile" id="souvik-profile">
+        <div class="profile-img">
+            <img src="images/souviksarkhel_img.jpg" ></img>
+        </div>
+        <div class="profile-details">
+          <h1>Souvik Sarkhel</h1>
+          <h3 class="batch-year">JGEC ME'22</h3>
+          <h3>souviksarkhel.kgp@gmail.com</h3>
+          <h3>+91-9932059045</h3>
+        </div>
+        <div class="social-media-details">
+          <ul>
+            <li><a href="https://www.linkedin.com/in/souviksarkhel/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
+            <li><a href="https://github.com/souviksarkhel621" target="_blank"><i class='bx bxl-github'></i></a></li>
+            <li><a href="https://www.instagram.com/the_hellslyte_/" target="_blank"><i class='bx bxl-instagram' ></i></a></li>
+          </ul>
+        </div>
+    </div>
+    
+    
+    
     <div class="footer">
-        <p>Made with &#10084;&#65039; By <span onmouseenter={openPopup1} onclick={closePopup1}><a href="#">Mongalmoy Karmakar</a></span> & <span onmouseenter={openPopup2} onclick={closePopup2}><a href="#">Souvik Sarkhel</a></span></p>
+        <p>Made with &#10084;&#65039; By <span class="span-1" onmouseenter="openPopup1()" onmouseout="closePopup1()">Mongalmoy Karmakar</span> & <span class="span-2" onmouseenter="openPopup2()" onmouseout="closePopup2()">Souvik Sarkhel</span></p>
     </div>
 </div>
+
+<script>
+    function openPopup1() {
+        document.getElementById('mongalmoy-profile').style.display = 'block';
+    }
+    function closePopup1() {
+        document.getElementById('mongalmoy-profile').style.display = 'none';
+    }
+    function openPopup2() {
+        document.getElementById('souvik-profile').style.display = 'block';
+    }
+    function closePopup2() {
+        document.getElementById('souvik-profile').style.display = 'none';
+    }
+</script>
+
 </body>
 </html>
