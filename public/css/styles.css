@@ -1,0 +1,812 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#body {
+    background: #E0E0E0;
+    height: 100vh;
+    z-index: 0;
+}
+
+#body nav {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.container-fluid .navbar-brand {
+    width: 100%;
+    font-size: 35px;
+}
+
+.container-fluid img {
+    height: 50px;
+    margin-left: 20px;
+    padding-right: 10px;
+}
+
+#navbarNav {
+    margin-left: 1000px;
+    font-size: 25px;
+}
+
+
+
+
+/***************** Enter Page Starts ******************/
+.enter-page img {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    opacity: 0.9;
+}
+
+.enter-page .welcome-to-jolubook {
+    position: absolute;
+    left: 50%;
+    bottom: 350px;
+    color: #fff;
+    transform:translateX(-50%);
+    color: #fff;
+}
+
+.enter-page .welcome-to-jolubook h1 {
+    font-weight: 900;
+    font-size: 50px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.enter-page .buttons {
+    position: absolute;
+    left: 50%;
+    bottom: 250px;
+    transform:translateX(-50%);
+}
+
+.enter-page .buttons button {
+    outline: none;
+    border: none;
+    background-color: #2e2e2e;
+    color: #fff;
+    padding: 5px 20px;
+    margin-right: 50px;
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.enter-page .buttons button:hover {
+    color: aqua;
+}
+
+.enter-page .developer-names {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.enter-page .developer-names span:hover {
+    color: aquamarine;
+}
+/***************** Enter page Ends *******************/
+
+
+
+/******************* Register Page Begins ************************/
+
+.register-page {
+    background-image: linear-gradient(to right, rgb(7, 161, 189) , rgb(28, 29, 124));
+    z-index: 0;
+}
+
+.register-page .row {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+}
+
+.register-page .row .col-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row .col-6 .left-div .logo {
+    padding: 20px;
+    margin: 0 20px;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .col-6 .left-div .logo img {
+    border-radius: 50%;
+    height: 150px;
+}
+
+.row .col-6 .left-div .name {
+    padding: 0 20px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .col-6 .left-div .name p {
+    margin: 10px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.row .col-6 .left-div .welcome {
+    padding: 0 20px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .col-6 .left-div .welcome p {
+    font-size: 35px;
+    padding: 10px;
+    font-weight: 800px;
+}
+
+.row .col-6 .left-div .about-us {
+    padding: 0 20px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row .col-6 .left-div .about-us a {
+    background-color: #fff;
+    color: #3d3939;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 20px;
+    transition: all ease 0.5s;
+}
+
+.row .col-6 .left-div .about-us a:hover {
+    width: 160px;
+}
+
+.row .col-6 .right-div {
+    width: 650px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.row .col-6 .right-div .form-div {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.form-div form .register-form .heading-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    color: black;
+}
+
+.form-div form .register-form .heading-div h1 {
+    font-weight: 800;
+}
+
+.form-div form .register-form .input-name {
+    margin-bottom: 10px;
+}
+
+.form-div form .register-form .input-name input {
+    outline: none;
+    width: 450px;
+    height: 35px;
+    color: #041C32;
+    padding-left: 5px;
+}
+
+.form-div form .register-form .input-year select {
+    color: #5c6063;
+    outline: none;
+    width: 150px;
+    height: 35px;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .input-year .input-department {
+    color: #5c6063;
+    outline: none;
+    width: 290px;
+    height: 35px;
+    padding-left: 5px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .current-position input {
+    outline: none;
+    width: 450px;
+    height: 35px;
+    color: #041C32;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .input-email input {
+    outline: none;
+    width: 450px;
+    height: 35px;
+    color: #041C32;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .input-password input {
+    outline: none;
+    width: 450px;
+    height: 35px;
+    color: #041C32;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .register-button {
+    height: 100px;
+    position: relative;
+}
+
+.form-div form .register-form .register-button button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #475455;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.right-div .convert-div p {
+    color: #5c6063;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.right-div .convert-div p span a {
+    text-decoration: none;
+}
+
+/******************* Register Page Ends *************************/
+
+
+
+/**************** Chatbox Starts ************************/
+#root {
+    z-index: 0;
+    background-color: #E0E0E0;
+    position: absolute;
+    left: 0;
+    top: 85px;
+    width: 100%;
+    padding-bottom: 68px;
+}
+
+#root .chatbox {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+    position: relative;
+}
+
+#root .chatbox .feed {
+    width: 600px;
+    background-color: #fff;
+    color: rgb(73, 71, 71);
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#root .chatbox .feed .user-profile-container {
+    position: relative;
+    height: 75px;
+}
+
+#root .chatbox .feed .user-profile-container .user-img {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#root .chatbox .feed .user-profile-container .user-img img{
+    height: 60px;
+    border-radius: 50%;
+}
+
+#root .chatbox .feed .user-info {
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    position: absolute;
+    left: 80px;
+    top: 0;
+}
+/* 99A799 */
+#root .chatbox .feed .user-info p {
+    margin: 0;
+    padding: 0;
+}
+
+#root .chatbox .feed .user-name {
+    color: black;
+    font-weight: 400;
+}
+
+#root .chatbox .feed .user-info .user-bio {
+    color: #99A799;
+    font-size: 12px;
+}
+
+#root .chatbox .feed .user-profile-container .post-time-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    font-size: 12px;
+}
+
+#root .chatbox .feed .user-profile-container .post-time-div i {
+    color: #99A799;
+    font-size: 12px;
+    display: inline;
+}
+
+#root .chatbox .feed .user-profile-container .post-time-div  p {
+    color: #99A799;
+    font-size: 12px;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    margin-left: 3px;
+    padding-left: 1px;
+}
+
+#root .chatbox .feed .user-chatbox {
+    margin: 0;
+    padding: 5px 0;
+}
+
+#root .chatbox .feed .user-chatbox p {
+    margin: 0;
+    padding: 0;
+}
+
+/**************** Chatbox Ends **************/
+
+
+
+
+/**************** Start Post Box Starts ************/
+.start-post-div{
+    position: fixed;
+    right: 20px;
+    top: 90px;
+    height: 100px;
+    width: 410px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.start-post-div .post-body {
+    height: 100px;
+    width: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.start-post-div .post-body .start-post-img {
+    height: 100px;
+    width: 80px;
+    padding: 5px;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-post-div .post-body .start-post-img img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.start-post-div .post-body .start-post-content {
+    width: 330px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-post-div .post-body .start-post-content input {
+    padding: 15px;
+    height: 55px;
+    width: 330px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    margin-right: 10px;
+    color: #2e2e2e;
+}
+
+
+
+.post-box-container {
+    width: 500px;
+    height: 320px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 10px;
+    display: none;
+}
+
+.post-box-container .post-heading {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.post-box-container .post-heading p {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #504b4b;
+    padding-top: 5px;
+}
+
+.post-box-container .post-heading i {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    border-right: 50%;
+    cursor: pointer;
+    color: #181717;
+    opacity: 0.8;
+}
+
+.post-box-container .post-heading i:hover {
+    opacity: 1;
+}
+
+.post-box-container hr {
+    border: 0;
+    border-bottom: 2px solid #706f6f;
+    margin: 0;
+    padding: 0;
+}
+
+.post-box-container .post-name-img {
+    height: 50px;
+    width: 100%;
+    padding: 10px 5px;
+}
+
+.post-box-container .post-name-img img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.post-box-container .post-name-img .post-name {
+    display: inline;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.post-box-container .post-box-body {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-box-container .post-box-body textarea {
+    border: none;
+    outline: none;
+    color: #212224;
+}
+
+.post-box-container .send-button {
+    height: 20px;
+    width: 100%;
+}
+
+.post-box-container .send-button button {
+    visibility: hidden;
+}
+
+.post-box-container .send-button button i {
+    visibility: visible;
+    font-size: 35px;
+    color: #929292;
+    position: absolute;
+    right: 25px;
+    bottom: 8px;
+}
+/**************** Start Post Box Ends **************/
+
+
+
+
+/******************* Owner Profile Starts ******************/
+#root .owner-profile {
+    width: 380px;
+    height: 450px;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 10px 15px 20px grey;
+    z-index: 1;
+    background-color: #202431;
+    position: fixed;
+}
+
+#root .owner-profile i {
+    position: absolute;
+    color: #fff;
+    font-size: 25px;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+#mongalmoyProfile {
+    position: fixed;
+    left: 565px;
+    bottom: 85px;
+    display: none;
+}
+
+#mongalmoyProfile::after {
+    content: "";
+    position: fixed;
+    left: 730px;
+    bottom: 35px;
+    margin-left: -5px;
+    border-width: 25px;
+    border-style: solid;
+    border-color: #202431 transparent transparent transparent;
+}
+
+#souvikProfile {
+    position: fixed;
+    left: 700px;
+    bottom: 85px;
+    display: none;
+}
+
+#souvikProfile::after {
+    content: "";
+    position: fixed;
+    left: 870px;
+    bottom: 35px;
+    margin-left: -5px;
+    border-width: 25px;
+    border-style: solid;
+    border-color: #202431 transparent transparent transparent;
+}
+
+#root .owner-profile .profile-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 5px;
+    margin-top: 10px;
+}
+
+#root .owner-profile .profile-img img {
+    border-radius: 50%;
+    outline: none;
+    height: 130px;
+}
+
+.owner-profile .profile-details {
+    padding: 10px 0px;
+    padding-top: 0;
+}
+
+.owner-profile .profile-details h1 {
+    font-size: 28px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.owner-profile .profile-details .batch-year {
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.owner-profile .profile-details h3 {
+    font-size: 15px;
+    text-align: center;
+}
+
+.owner-profile .social-media-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.owner-profile .social-media-details ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 100px;
+}
+
+.social-media-details ul li a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.social-media-details ul li i{
+    font-size: 30px;
+    margin: 0 15px;
+}
+/**************** Owner Profile Ends ******************/
+
+
+
+
+/******************* Acoount Page Starts *****************/
+.account-page-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.account-page-outer .account-page-inner {
+    width: 700px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.account-page-outer .account-page-inner .home-link {
+    font-size: 12px;
+    padding: 8px;
+}
+
+.account-page-outer .account-page-inner .home-link p {
+    padding: 0;
+    margin: 0;
+}
+
+.account-page-outer .account-page-inner .user-profile {
+    padding: 10px 20px;
+}
+
+
+.user-profile .user-name-img img {
+    height: 45px;
+}
+
+.user-profile .user-name-img p {
+    display: inline;
+}
+
+.account-page-outer .account-page-inner .user-profile hr.main-hr {
+    border: 0;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.account-page-outer .account-page-inner .user-profile-details {
+    font-size: 13px;
+}
+
+.account-page-outer .account-page-inner .user-profile-details p span {
+    font-weight: 500;
+}
+
+.account-page-outer .account-page-inner .user-profile-details p {
+    padding: 0;
+    margin: 8px 0;
+}
+
+.user-profile-details .p-br {
+    border: 0;
+    margin: 10px 0;
+    border-top: 1px solid #b1b1b1;
+}
+/******************* Account Page Ends *******************/
+
+
+
+
+/*********** Footer Starts **************/
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #041C32;
+    color: #fff;
+    z-index: 1;
+}
+
+.footer p {
+    margin: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.footer p span {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer p span:hover {
+    color: rgb(62, 250, 250);
+}
+/***************** Footer Ends ****************/

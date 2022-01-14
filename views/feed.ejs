@@ -1,0 +1,89 @@
+<%- include('partials/header'); -%>
+
+
+<div class="chatbox" id="chatbox">
+
+  <div>
+    <% allposts.forEach(function(post){ %>
+    <div class="feed">
+
+      <div class="user-profile-container">
+
+        <div class="user-img">
+          <img src="/images/mongalmoy_img.jpg" alt="">
+        </div>
+
+        <div class="user-info">
+          <p class="user-name"><%=post.postedby.name%></p>
+          <p class="user-bio">Currently Working At: <strong><%=post.postedby.currorg%></strong></p>
+          <p class="user-bio">JGEC<%=post.postedby.department%><%=post.postedby.year%></p>
+        </div>
+
+        <div class="post-time-div">
+          <i class="fas fa-globe-asia"></i>
+          <p><%= post.time %></p>
+        </div>
+
+      </div>
+
+      <hr style="margin:0">
+      <div class="user-chatbox">
+        <p><%=post.postedtext%></p>
+      </div>
+    </div>
+    <% }) %>
+
+  </div>
+
+</div>
+
+
+<div class="post-box-container" id="sendFormDiv">
+  <form action="/addpost" method="POST">
+    <div class="post-heading">
+      <div>
+        <p>Create a post</p>
+  
+      <i class=' close-button bx bx-x' onclick="closeForm()"></i>
+      </div>
+    </div>
+  
+    <hr>
+  
+    <div class="post-name-img">
+      <img src="/images/download.png" alt="_image">
+      <div class="post-name">
+        Mongalmoy Karmakar
+      </div>
+    </div>
+  
+    <div class="post-box-body">
+      <textarea name="inputText" id="posttextarea" cols="50" rows="6" placeholder="What do you want to talk about?" onkeypress="handleChange()" onkeyup="handleChange()" onchange="handleChange()"></textarea>
+    </div>
+  
+    <div class="send-button">
+      <button type="submit" ><i id="sendButton" class='bx bxs-send'></i></button>
+    </div>
+  </form>
+</div>
+
+
+<div id="openStartDiv" class="start-post-div">
+
+    <div class="post-body">
+
+      <div class="start-post-img">
+        <img src="/images/download.png" alt="_userimage">
+      </div>
+      <div class="start-post-content">
+        <input onfocus="openForm()" placeholder="Start a post">
+      </div>
+
+    </div>
+
+</div>
+
+
+
+
+<%- include('partials/footer'); -%>
