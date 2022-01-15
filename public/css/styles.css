@@ -21,6 +21,7 @@
 .container-fluid .navbar-brand {
     width: 100%;
     font-size: 35px;
+    width: 200px;
 }
 
 .container-fluid img {
@@ -30,10 +31,45 @@
 }
 
 #navbarNav {
-    margin-left: 1000px;
     font-size: 25px;
+    width: 100%;
+    position: relative;
 }
 
+#navbarNav ul {
+    position: absolute;
+    right: 10px;
+}
+
+#navbarNav ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbarNav ul li img {
+    padding: 8px 0;
+    margin: 0;
+    padding-right: 0;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+#navbarNav ul .nav-link-img {
+    padding-right: 0;
+}
+
+#navbarNav ul li a span{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+#navbarNav ul li a i {
+    font-size: 24px;
+    font-weight: 700px;
+    color: #000;
+}
 
 
 
@@ -610,11 +646,15 @@
 
 #root .owner-profile .bx-x {
     position: absolute;
-    color: #fff;
+    color: #dddddd;
     font-size: 25px;
     right: 15px;
     top: 15px;
     cursor: pointer;
+}
+
+#root .owner-profile .bx-x:hover {
+    color: #fff;
 }
 
 #mongalmoyProfile {
@@ -724,12 +764,26 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .account-page-outer .account-page-inner {
     width: 700px;
     background-color: #fff;
     border-radius: 5px;
+    position: relative;
+}
+
+.account-page-outer .account-page-inner .edit-link {
+    color: #1b1b1b;
+}
+
+.account-page-outer .account-page-inner .fa-pencil-alt {
+    position: absolute;
+    font-size: 15px;
+    top: 25px;
+    right: 35px;
+    cursor: pointer;
 }
 
 .account-page-outer .account-page-inner .home-link {
@@ -762,6 +816,28 @@
 
 .account-page-outer .account-page-inner .user-profile-details {
     font-size: 13px;
+    padding-bottom: 20px;
+}
+
+.account-page-outer .account-page-inner .user-profile-details strong {
+    font-size: 13px;
+}
+
+.user-profile-details .separate-div {
+    margin-bottom: 15px;
+}
+
+.account-page-outer .account-page-inner .user-profile-details input {
+    outline: none;
+    width: 300px;
+    margin-left: 10px;
+    padding: 4px 5px;
+    border: 1px solid #b9b9b9;
+    color: #000;
+}
+
+.account-page-outer .account-page-inner .user-profile-details input:focus {
+    border-bottom: 1px solid #a0a0a0;
 }
 
 .account-page-outer .account-page-inner .user-profile-details p span {

@@ -1,0 +1,74 @@
+<%- include('partials/header'); -%>
+
+<div class="account-page-outer">
+    <div class="account-page-inner">
+
+        <div class="home-link">
+            <p> <a href="/feed">Home </a> >><span>Mongalmoy Karmakar</span> </p>
+        </div>
+
+        <div class="user-profile">
+
+            <div class="user-name-img">
+                <img src="/images/mongalmoy_img.jpg" alt="_image">
+                <p>&emsp;<strong>Mongalmoy Karmakar</strong></p>
+                <!-- <div class="user-img">
+                    <img src="/images/mongalmoy_img.jpg" alt="_image">
+                </div>
+                <div class="user-name">
+                    Mongalmoy Karmakar
+                </div> -->
+            </div>
+
+            <hr class="main-hr">
+
+            <div class="user-profile-details">
+
+                <div class="separate-div">
+                    <p><strong>Upload picture of yourself:</strong></p>
+                    <p>Upload files of type jpeg, jpg, png only.</p>
+                    <input name="newImg" type="file">
+                </div>
+
+
+                <div class="separate-div">
+                    <label for="name"><strong>Name:</strong></label>
+                    <input name="userName" type="text" class="name">
+                </div>
+
+                <div class="separate-div">
+                    <strong>Country:</strong>
+                    <input name="userCountry" type="text">
+                </div>
+
+                <div class="separate-div">
+                    <strong>State:</strong>
+                    <input name="userState" type="text">
+                </div>
+
+                <div class="separate-div">
+                    <strong>Current City:</strong>
+                    <input name="userCity" type="text">
+                </div>
+
+                <div class="separate-div">
+                    <strong>Current Position:</strong>
+                    <input name="currPosition" type="text">
+                </div>
+
+                <div class="separate-div">
+                    <strong>Passout Year:</strong>
+                    <input name="passoutYear" type="text">
+                </div>
+
+                <div class="separate-div">
+                    <strong>Department:</strong>
+                    <input name="passoutDept" type="text">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%- include('partials/footer'); -%>
