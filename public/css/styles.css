@@ -608,7 +608,7 @@
     position: fixed;
 }
 
-#root .owner-profile i {
+#root .owner-profile .bx-x {
     position: absolute;
     color: #fff;
     font-size: 25px;
@@ -693,14 +693,15 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 0;
+    width: 100%;
+    bottom: 30px;
 }
 
 .owner-profile .social-media-details ul {
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 0 0 20px 100px;
+    margin: 0;
 }
 
 .social-media-details ul li a {
@@ -710,7 +711,7 @@
 
 .social-media-details ul li i{
     font-size: 30px;
-    margin: 0 15px;
+    margin: 0 25px;
 }
 /**************** Owner Profile Ends ******************/
 
