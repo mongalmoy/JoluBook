@@ -99,6 +99,17 @@
     }
 
 
+    function displayCommentSection() {
+      const element = document.querySelectorAll(".start-comment");
+      element.onclick = true;
+      console.log(element);
+
+      for(let i=0; i<element.length; i++){
+        element.style.visibility = "visible";
+        element.style.height = "60px";
+      }
+    }
+
 
 </script>
 
