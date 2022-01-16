@@ -856,6 +856,7 @@
 
 .user-profile-details .separate-div {
     margin-bottom: 15px;
+    padding: 0 16px;
 }
 
 .account-page-outer .account-page-inner .user-profile-details input {
@@ -884,6 +885,27 @@
     border: 0;
     margin: 10px 0;
     border-top: 1px solid #b1b1b1;
+}
+.account-page-inner .user-profile .save-button {
+    padding: 10px;
+    position: relative;
+    height: 50px;
+}
+
+.save-button button {
+    position: absolute;
+    left: 16px;
+    padding: 8px 24px;
+    bottom: 20px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #3434cf;
+    opacity: 0.8;
+}
+
+.save-button button:hover {
+    opacity: 1;
 }
 /******************* Account Page Ends *******************/
 

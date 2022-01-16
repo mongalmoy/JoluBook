@@ -22,50 +22,57 @@
 
             <hr class="main-hr">
 
-            <div class="user-profile-details">
+            <form method="POST" action="">
+                <div class="user-profile-details">
 
-                <div class="separate-div">
-                    <p><strong>Upload picture of yourself:</strong></p>
-                    <p>Upload files of type jpeg, jpg, png only.</p>
-                    <input name="newImg" type="file">
+                    <div class="separate-div">
+                        <p><strong>Upload picture of yourself:</strong></p>
+                        <p>Upload files of type jpeg, jpg, png only.</p>
+                        <input name="newImg" type="file">
+                    </div>
+    
+    
+                    <div class="separate-div">
+                        <label for="name"><strong>Name:</strong></label>
+                        <input name="userName" type="text" class="name">
+                    </div>
+    
+                    <div class="separate-div">
+                        <strong>Country:</strong>
+                        <input name="userCountry" type="text">
+                    </div>
+    
+                    <div class="separate-div">
+                        <strong>State:</strong>
+                        <input name="userState" type="text">
+                    </div>
+    
+                    <div class="separate-div">
+                        <strong>Current City:</strong>
+                        <input name="userCity" type="text">
+                    </div>
+    
+                    <div class="separate-div">
+                        <strong>Current Position:</strong>
+                        <input name="currPosition" type="text">
+                    </div>
+    
+                    <div class="separate-div">
+                        <strong>Passout Year:</strong>
+                        <input name="passoutYear" type="text">
+                    </div>
+    
+                    <div class="separate-div">
+                        <strong>Department:</strong>
+                        <input name="passoutDept" type="text">
+                    </div>
                 </div>
-
-
-                <div class="separate-div">
-                    <label for="name"><strong>Name:</strong></label>
-                    <input name="userName" type="text" class="name">
+    
+                <div class="save-button">
+                    <button type="submit">Save</button>
                 </div>
+            </form>
 
-                <div class="separate-div">
-                    <strong>Country:</strong>
-                    <input name="userCountry" type="text">
-                </div>
-
-                <div class="separate-div">
-                    <strong>State:</strong>
-                    <input name="userState" type="text">
-                </div>
-
-                <div class="separate-div">
-                    <strong>Current City:</strong>
-                    <input name="userCity" type="text">
-                </div>
-
-                <div class="separate-div">
-                    <strong>Current Position:</strong>
-                    <input name="currPosition" type="text">
-                </div>
-
-                <div class="separate-div">
-                    <strong>Passout Year:</strong>
-                    <input name="passoutYear" type="text">
-                </div>
-
-                <div class="separate-div">
-                    <strong>Department:</strong>
-                    <input name="passoutDept" type="text">
-                </div>
-            </div>
         </div>
 
     </div>
