@@ -28,6 +28,9 @@
     height: 50px;
     margin-left: 20px;
     padding-right: 10px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
 }
 
 #navbarNav {
@@ -375,8 +378,9 @@
     background-color: #fff;
     color: rgb(73, 71, 71);
     padding: 8px 10px;
+    padding-bottom: 4px;
     border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #root .chatbox .feed .user-profile-container {
@@ -457,6 +461,33 @@
 #root .chatbox .feed .user-chatbox p {
     margin: 0;
     padding: 0;
+}
+
+#root .chatbox .feed .comment-like-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#root .chatbox .feed .comment-like-share div {
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    font-size: 18px;
+    transition-delay: 0.1s;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#root .chatbox .feed .comment-like-share div:hover {
+    background-color: #ddd;
+}
+
+#root .chatbox .feed .comment-like-share div span {
+    margin-left: 5px;
+    font-size: 14px;
 }
 
 /**************** Chatbox Ends **************/
