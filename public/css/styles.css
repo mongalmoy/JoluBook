@@ -47,7 +47,6 @@
 #navbarNav ul li {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 #navbarNav ul li img {
@@ -62,10 +61,10 @@
     padding-right: 0;
 }
 
-#navbarNav ul li a span{
+#userName{
     font-size: 18px;
-    font-weight: 600;
-    padding: 8px 0;
+    font-weight: 700;
+    margin-top: 12px;
 }
 
 #navbarNav ul li a i {
@@ -74,7 +73,17 @@
     color: #000;
 }
 
+#navlinkDropdown {
+    width: 100px;
+}
 
+.envelop-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+}
 
 /***************** Enter Page Starts ******************/
 .enter-page img {
@@ -722,6 +731,10 @@
     position: absolute;
     right: 25px;
     bottom: 8px;
+}
+
+.post-box-container .send-button input {
+    visibility: visible;
 }
 /**************** Start Post Box Ends **************/
 

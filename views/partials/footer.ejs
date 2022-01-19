@@ -47,17 +47,16 @@
     </ul>
   </div>
 </div>
-    
 
 
 
-    <div class="footer" onclick="closePopup1()">
-        <p>Made with &#10084;&#65039; By <span class="span-1" onmousemove="closePopup2()" onmouseenter="openPopup1()" onclick="closePopup1()">Mongalmoy Karmakar</span> & <span class="span-2" onmouseenter="openPopup2()" onclick="closePopup2()" onmousemove="closePopup1()">Souvik Sarkhel</span></p>
+
+    <div class="footer">
+        <p>Made with &#10084;&#65039; By <span class="span-1" onclick="openPopup1()" onmousemove="closePopup2()" >Mongalmoy Karmakar</span> & <span class="span-2"  onclick="openPopup2()" onmousemove="closePopup1()">Souvik Sarkhel</span></p>
     </div>
 </div>
 
 <script>
-
     function openPopup1() {
       document.getElementById('mongalmoyProfile').style.display = "block";
     }
@@ -70,47 +69,39 @@
     function closePopup2() {
       document.getElementById('souvikProfile').style.display = "none";
     }
-    
 
     function openForm(){
       document.getElementById('openStartDiv').style.opacity = 0.2;
       document.getElementById('sendFormDiv').style.display = "block";
       document.getElementById('chatbox').style.opacity = 0.2;
     }
-
     function closeForm() {
       document.getElementById('openStartDiv').style.opacity = 1;
       document.getElementById('sendFormDiv').style.display = "none";
       document.getElementById('chatbox').style.opacity = 1;
     }
-
     function handleChange(){
       const inputText = document.getElementById('posttextarea').value;
-      
+
       if(inputText== ""){
         document.getElementById('sendButton').style.color = '#929292';
       } else {
         document.getElementById('sendButton').style.color = '#0734fd';
       }
     }
-
     function handleClickOnLike(evt) {
       // document.querySelectorAll(".add-like").style.fontSize = "20px";
     }
-
-
     function displayCommentSection() {
       const element = document.querySelectorAll(".start-comment");
       element.onclick = true;
       console.log(element);
-
       for(let i=0; i<element.length; i++){
         element.style.visibility = "visible";
         element.style.height = "60px";
       }
     }
-
-
+    
 </script>
 
 </body>

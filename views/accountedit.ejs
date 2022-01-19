@@ -1,17 +1,17 @@
-<%- include('partials/header'); -%>
+<%=user.name%><%- include('partials/header',{myname:user.name}); -%>
 
 <div class="account-page-outer">
     <div class="account-page-inner">
 
         <div class="home-link">
-            <p> <a href="/feed">Home </a> >><span>Mongalmoy Karmakar</span> </p>
+            <p> <a href="/feed">Home </a> >><span><%=user.name%></span> </p>
         </div>
 
         <div class="user-profile">
 
             <div class="user-name-img">
-                <img src="/images/mongalmoy_img.jpg" alt="_image">
-                <p>&emsp;<strong>Mongalmoy Karmakar</strong></p>
+                <img src="/uploads/<%=accountholder.dp%>" alt="_image">
+                <p>&emsp;<strong><%=user.name%></strong></p>
                 <!-- <div class="user-img">
                     <img src="/images/mongalmoy_img.jpg" alt="_image">
                 </div>
@@ -22,7 +22,7 @@
 
             <hr class="main-hr">
 
-            <form method="POST" action="">
+            <form method="POST" action="/editaccount" enctype="multipart/form-data">
                 <div class="user-profile-details">
 
                     <div class="separate-div">
@@ -30,44 +30,53 @@
                         <p>Upload files of type jpeg, jpg, png only.</p>
                         <input name="newImg" type="file">
                     </div>
-    
-    
+
+
                     <div class="separate-div">
                         <label for="name"><strong>Name:</strong></label>
-                        <input name="userName" type="text" class="name">
+                        <input name="name" type="text" class="name"  value="<%=accountholder.name%>" readonly>
                     </div>
-    
                     <div class="separate-div">
-                        <strong>Country:</strong>
-                        <input name="userCountry" type="text">
+                        <strong>Email:</strong>
+                        <input name="username" type="email" value="<%=accountholder.username%>" readonly>
                     </div>
-    
                     <div class="separate-div">
-                        <strong>State:</strong>
-                        <input name="userState" type="text">
+                        <strong>Mobile No:</strong>
+                        <input name="mobile" type="text" value="<%=accountholder.mobile%>">
                     </div>
-    
+                    <div class="separate-div">
+                        <strong>Currently Working At:</strong>
+                        <input name="currorg" type="text" value="<%=accountholder.currorg%>">
+                    </div>
+
                     <div class="separate-div">
                         <strong>Current City:</strong>
-                        <input name="userCity" type="text">
+                        <input name="currcity" type="text" value="<%=accountholder.currcity%>">
                     </div>
-    
+
                     <div class="separate-div">
-                        <strong>Current Position:</strong>
-                        <input name="currPosition" type="text">
+                        <strong>Current Country:</strong>
+                        <input name="country" type="text" value="<%=accountholder.country%>">
                     </div>
-    
+                    <div class="separate-div">
+                        <strong>Hometown:</strong>
+                        <input name="hometown" type="text" value="<%=accountholder.hometown%>">
+                    </div>
+                    <div class="separate-div">
+                        <strong>Previously Worked At:</strong>
+                        <input name="prevorg" type="text" value="<%=accountholder.prevorg%>">
+                    </div>
                     <div class="separate-div">
                         <strong>Passout Year:</strong>
-                        <input name="passoutYear" type="text">
+                        <input name="year" type="text" value="<%=accountholder.year%>" readonly>
                     </div>
-    
+
                     <div class="separate-div">
                         <strong>Department:</strong>
-                        <input name="passoutDept" type="text">
+                        <input name="department" type="text" value=<%=accountholder.department%> readonly>
                     </div>
                 </div>
-    
+
                 <div class="save-button">
                     <button type="submit">Save</button>
                 </div>

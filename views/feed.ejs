@@ -1,56 +1,44 @@
-<%- include('partials/header'); -%>
-
+<%- include('partials/header',{user:currentuser}); -%>
 
 <div class="chatbox" id="chatbox">
-
   <div>
     <% allposts.forEach(function(post){ %>
     <div class="feed">
-
       <div class="user-profile-container">
-
         <div class="user-img">
-          <img src="/images/mongalmoy_img.jpg" alt="">
+          <img src="./uploads/<%=post.authordp%>" alt="">
         </div>
-
         <div class="user-info">
-          <p class="user-name"><%=post.postedby.name%></p>
-          <p class="user-bio">Currently Working At: <strong><%=post.postedby.currorg%></strong></p>
-          <p class="user-bio">JGEC<%=post.postedby.department%><%=post.postedby.year%></p>
+          <p class="user-name"><%=post.author%></p>
+          <p class="user-bio">Currently Working At: <strong><%=post.authorg%></strong></p>
+          <p class="user-bio">JGEC&nbsp&nbsp<%=post.authdept%>&nbsp'<%=post.authpassyear%></p>
         </div>
-
         <div class="post-time-div">
           <i class="fas fa-globe-asia"></i>
-          <p><%= post.time %></p>
+          <p><%= post.posttime %></p>
         </div>
-
       </div>
-
       <div class="user-chatbox">
-        <p><%=post.postedtext%></p>
+        <p><%=post.post%></p>
       </div>
-
       <hr style="margin: 4px 0; border: 0; height: 1px;">
       <div class="comment-like-share">
         <div onclick="handleClickOnLike()"> <i class='add-like bx bxs-like'></i> <span id="countLike"></span> <span>Like</span> </div>
         <div onclick="displayCommentSection()"> <i class='bx bx-comment-detail'></i> <span id="countComment"></span> <span>Comment</span> </div>
         <div > <i class="fal fa-share"></i> <span id="countShare"></span> <span>Share</span></div>
       </div>
-
       <div class="start-comment">
         <div class="container-img">
-          <img src="/images/download.png" alt="_image">
+          <img src="/images/<%=currentuser.dp%>" alt="_image">
         </div>
         <div class="input-comment">
           <input type="text" name="inputComment">
-          
           <div class="comment-img-emoji">
             <div class="comment-img"> <i class="far fa-smile"></i> </div>
             <div class="comment-emoji"> <i class="fas fa-image"></i> </div>
           </div>
         </div>
       </div>
-
     </div>
     <% }) %>
 
@@ -64,26 +52,27 @@
     <div class="post-heading">
       <div>
         <p>Create a post</p>
-  
+
       <i class=' close-button bx bx-x' onclick="closeForm()"></i>
       </div>
     </div>
-  
+
     <hr>
-  
+
     <div class="post-name-img">
-      <img src="/images/download.png" alt="_image">
+      <img src="./uploads/<%=currentuser.dp%>" alt="_image">
       <div class="post-name">
-        Mongalmoy Karmakar
+        <%=currentuser.name%>
       </div>
     </div>
-  
+
     <div class="post-box-body">
       <textarea name="inputText" id="posttextarea" cols="50" rows="6" placeholder="What do you want to talk about?" onkeypress="handleChange()" onkeyup="handleChange()" onchange="handleChange()"></textarea>
     </div>
-  
+
     <div class="send-button">
       <button type="submit" ><i id="sendButton" class='bx bxs-send'></i></button>
+      <input type="file" name="postDocument">
     </div>
   </form>
 </div>
@@ -94,16 +83,15 @@
     <div class="post-body">
 
       <div class="start-post-img">
-        <img src="/images/download.png" alt="_userimage">
+        <img src="./uploads/<%=currentuser.dp%>" alt="_userimage">
       </div>
       <div class="start-post-content">
-        <input onfocus="openForm()" placeholder="Start a post">
+        <input onfocus="openForm()" placeholder="Add a post">
       </div>
 
     </div>
 
 </div>
-
 
 
 

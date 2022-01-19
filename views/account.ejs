@@ -1,18 +1,18 @@
-<%- include('partials/header'); -%>
+<%- include('partials/header',{myname:user.name}); -%>
 
 <div class="account-page-outer">
     <div class="account-page-inner">
 
-        <a class="edit-link" href="/accountedit"><i class="fas fa-pencil-alt"></i></a>
+        <a class="edit-link" href="/editaccount"><i class="fas fa-pencil-alt"></i></a>
 
         <div class="home-link">
-            <p> <a href="/feed">Home </a> >><span><%=user.name%></span> </p>
+            <p> <a href="/feed">Home </a> >><span><%=accountholder.name%></span> </p>
         </div>
 
         <div class="user-profile">
             <div class="user-name-img">
-                <img src="/images/mongalmoy_img.jpg" alt="_image">
-                <p>&emsp;<strong><%=user.name%></strong></p>
+                <img src="./uploads/<%=accountholder.dp%>" alt="_image">
+                <p>&emsp;<strong><%=accountholder.name%></strong></p>
                 <!-- <div class="user-img">
                     <img src="/images/mongalmoy_img.jpg" alt="_image">
                 </div>
@@ -24,25 +24,31 @@
             <hr class="main-hr">
 
             <div class="user-profile-details">
-                <p> <span>Email:&emsp;&emsp;<strong><%=user.username%></span> </strong></p>
+                <p> <span>Email:&emsp;&emsp;<strong><%=accountholder.username%></span> </strong></p>
                 <hr class="p-br">
 
-                <p> <span>Country:&emsp;&emsp;<strong>India</span> </strong></p>
+                <p> <span>Mobile:&emsp;&emsp;<strong><%=accountholder.mobile%></span> </strong></p>
                 <hr class="p-br">
 
-                <p> <span>State:&emsp;&emsp;<strong>West Bengal</span> </strong></p>
+                <p> <span>Currently Working At:&emsp;&emsp;<strong><%=accountholder.currorg%></span> </strong></p>
                 <hr class="p-br">
 
-                <p> <span>City:&emsp;&emsp;<strong>Kolkata</span> </strong></p>
+                <p> <span>Current City:&emsp;&emsp;<strong><%=accountholder.currcity%></span> </strong></p>
                 <hr class="p-br">
 
-                <p> <span>Current Position:&emsp;&emsp;<strong><%=user.currorg%></span> </strong></p>
+                <p> <span>Country:&emsp;&emsp;<strong><%=accountholder.country%></span> </strong></p>
                 <hr class="p-br">
 
-                <p> <span>Year:&emsp;&emsp;<strong><%=user.year%></span> </strong></p>
+                <p> <span>Hometown:&emsp;&emsp;<strong><%=accountholder.hometown%></span> </strong></p>
                 <hr class="p-br">
 
-                <p> <span>Batch:&emsp;&emsp;<strong><%=user.department%></span></strong> </p>
+                <p> <span>Previously Worked At:&emsp;&emsp;<strong><%=accountholder.prevorg%></span> </strong></p>
+                <hr class="p-br">
+
+                <p> <span>Dept:&emsp;&emsp;<strong><%=accountholder.department%></span> </strong></p>
+                <hr class="p-br">
+
+                <p> <span>Batch:&emsp;&emsp;<strong><%=accountholder.year%></span></strong> </p>
                 <hr class="p-br">
             </div>
         </div>
