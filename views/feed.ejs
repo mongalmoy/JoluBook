@@ -72,8 +72,56 @@
 
     <div class="send-button">
       <button type="submit" ><i id="sendButton" class='bx bxs-send'></i></button>
-      <input type="file" name="postDocument">
     </div>
+
+    <div class="attach-icon-div" id="attachIcons">
+      <ul>
+
+        <li>
+          <div onclick="handleCaptureButton()" id="start-camera" class="camera-holder">
+            <i class="fas fa-camera"></i>
+          </div>
+          <span class="tooltip">Camera</span>
+        </li>
+
+        <li>
+          <div onclick="handleAttachImage()" class="image-holder">
+            <i class="fas fa-image"></i>
+            <input class="input-file"  type="file" name="postAttachImage" accept=".png, .jpeg, .jpg" >
+          </div>
+          <span class="tooltip">Image</span>
+        </li>
+
+        <li>
+          <div onclick="handleAttachDocument()" class="document-holder">
+            <i class="far fa-file"></i>
+            <input class="input-file" type="file" name="postAttachDocument" accept=".docx, .doc, .pdf, .xlsx" >
+          </div>
+          <span class="tooltip">Document</span>
+        </li>
+
+        <li>
+          <div onclick="handleAttachAudio()" class="audio-holder">
+            <i class="fas fa-headphones-alt"></i>
+            <input class="input-file" type="file" name="postAttachAudio" accept=".mp3, .wav" >
+          </div>
+          <span class="tooltip">Audio</span>
+        </li>
+
+      </ul>
+
+    </div>
+
+    
+    <video id="video" width="380" height="280" playsinline autoplay></video>
+    <button id="capture">Capture</button>
+    <canvas id="canvas" width="380" height="280"></canvas>
+
+    
+    <div class="attach" onclick="dispalyAttachIcons()">
+      <i class="far fa-paperclip"></i>
+    </div>
+
   </form>
 </div>
 

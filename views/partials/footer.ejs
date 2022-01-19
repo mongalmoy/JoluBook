@@ -101,6 +101,53 @@
         element.style.height = "60px";
       }
     }
+
+    function dispalyAttachIcons() {
+      document.getElementById('attachIcons').style.display = "block";
+    }
+
+    function handleCaptureButton() {
+      document.getElementById('capture').style.display = "block";
+    }
+
+    function handleAttachImage() {
+      document.querySelectorAll('.input-file')[0].click();
+    }
+
+    function handleAttachDocument() {
+      document.querySelectorAll('.input-file')[1].click();
+    }
+
+    function handleAttachAudio() {
+      document.querySelectorAll('.input-file')[2].click();
+    }
+
+
+    const cameraButton = document.getElementById('start-camera');
+    const video = document.getElementById('video');
+    const capture = document.getElementById('capture');
+    const canvas = document.getElementById('canvas');
+
+    cameraButton.addEventListener('click', async function() {
+        try {
+          const videoSrc = await navigator.mediaDevices.getUserMedia( {video: {width: 380, height: 280}} );
+          video.srcObject = videoSrc;
+        }
+        catch(e) {
+          console.log(e.toString());
+        }
+
+        const context = canvas.getContext('2d');
+        capture.addEventListener('click', function() {
+          context.drawImage(video, 0, 0, 380, 280);
+          // console.log('hii');
+          // const imgUrlData = canvas.toDataUrl(images/jpeg);
+
+          // console.log(imgUrlData);
+        });
+
+    });
+
     
 </script>
 

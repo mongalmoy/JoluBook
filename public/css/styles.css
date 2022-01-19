@@ -730,11 +730,129 @@
     color: #929292;
     position: absolute;
     right: 25px;
-    bottom: 8px;
+    bottom: 12px;
 }
 
 .post-box-container .send-button input {
     visibility: visible;
+}
+
+.post-box-container .attach {
+    position: absolute;
+    right: 80px;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.post-box-container .attach:hover {
+    background-color: #ddd;
+}
+
+.post-box-container .attach i {
+    font-size: 20px;
+    color: #929292;
+    transform: rotate(180deg);
+}
+
+#attachIcons {
+    position: absolute;
+    width: 60px;
+    right: 66px;
+    bottom: 50px;
+    display: none;
+}
+
+#attachIcons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#attachIcons ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    position: relative;
+}
+
+#attachIcons ul li div {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 0;
+}
+
+#attachIcons ul li div i {
+    font-size: 16px;
+    position: absolute;
+    z-index: 0;
+}
+
+#attachIcons ul li div input {
+    position: absolute;
+    z-index: 99;
+    width: 30px;
+    height: 30px;
+    visibility: hidden;
+}
+
+#attachIcons ul li div:hover {
+    background-color: #ddd;
+}
+
+#attachIcons ul li .tooltip {
+    position: absolute;
+    left: 55px;
+    top: 0;
+    opacity: 0;
+    text-align: center;
+    background-color: #838383;
+    padding: 1px 10px;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 15px;
+    padding-bottom: 2px;
+    transform: translateY(-50%);
+    transition: 0s;
+    pointer-events: none;
+}
+
+#attachIcons ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+#capture {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    outline: none;
+    display: none;
+    z-index: 1000;
+}
+
+#video {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 /**************** Start Post Box Ends **************/
 
