@@ -103,7 +103,13 @@
     }
 
     function dispalyAttachIcons() {
-      document.getElementById('attachIcons').style.display = "block";
+      let element = document.getElementById("attachIcons");
+
+      if(element.style.display === "none") {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
     }
 
     function handleCaptureButton() {

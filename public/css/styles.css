@@ -85,6 +85,10 @@
     cursor: pointer;
 }
 
+.envelop-container a {
+    text-decoration: none;
+}
+
 /***************** Enter Page Starts ******************/
 .enter-page img {
     width: 100%;
