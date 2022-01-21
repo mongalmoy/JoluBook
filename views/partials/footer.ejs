@@ -12,7 +12,7 @@
   <div class="profile-details">
     <h1>Mongalmoy Karmakar</h1>
     <h3 class="batch-year">JGEC ME'22</h3>
-    <h3>mongalmoykarmakar@gmail.com</h3>
+    <h3>mongalmoykarmakar.bwn@gmail.com</h3>
     <h3>+91-9064914585</h3>
   </div>
   <div class="social-media-details">
@@ -51,22 +51,31 @@
 
 
 
-    <div class="footer">
+    <div class="footer" id="footer">
         <p>Made with &#10084;&#65039; By <span class="span-1" onclick="openPopup1()" onmousemove="closePopup2()" >Mongalmoy Karmakar</span> & <span class="span-2"  onclick="openPopup2()" onmousemove="closePopup1()">Souvik Sarkhel</span></p>
     </div>
 </div>
 
 <script>
+
     function openPopup1() {
       document.getElementById('mongalmoyProfile').style.display = "block";
     }
+
     function closePopup1() {
       document.getElementById('mongalmoyProfile').style.display = "none";
     }
+
     function openPopup2() {
       document.getElementById('souvikProfile').style.display = "block";
     }
+
     function closePopup2() {
+      document.getElementById('souvikProfile').style.display = "none";
+    }
+
+    function closePopup() {
+      document.getElementById('mongalmoyProfile').style.display = "none";
       document.getElementById('souvikProfile').style.display = "none";
     }
 
@@ -75,11 +84,13 @@
       document.getElementById('sendFormDiv').style.display = "block";
       document.getElementById('chatbox').style.opacity = 0.2;
     }
+
     function closeForm() {
       document.getElementById('openStartDiv').style.opacity = 1;
       document.getElementById('sendFormDiv').style.display = "none";
       document.getElementById('chatbox').style.opacity = 1;
     }
+
     function handleChange(){
       const inputText = document.getElementById('posttextarea').value;
 
@@ -89,18 +100,45 @@
         document.getElementById('sendButton').style.color = '#0734fd';
       }
     }
-    function handleClickOnLike(evt) {
+
+
+    function handleClickOnLike(event) {
       // document.querySelectorAll(".add-like").style.fontSize = "20px";
+      let feedElements = document.querySelectorAll(".feed");
+      console.log(event.path[2]);
+      console.log(event.path[3]);
+      feedElements.forEach(function(element) {
+        if(element===event.path[2] || element===event.path[3]) {
+          console.log(element.style.height);
+          // if(element.style.height === "18px") {
+          //   element.style.height = "19px";
+          //   element.classList.add("liked");
+          // } else {
+          //   element.style.height = "19px";
+          //   element.classList.remove("liked");
+          // }
+        }
+      })
     }
-    function displayCommentSection() {
-      const element = document.querySelectorAll(".start-comment");
-      element.onclick = true;
-      console.log(element);
-      for(let i=0; i<element.length; i++){
-        element.style.visibility = "visible";
-        element.style.height = "60px";
-      }
+
+
+    function displayCommentSection(event) {
+      let feedElements = document.querySelectorAll(".feed");
+      feedElements.forEach( function(element) {
+        if(element===event.path[2] || element===event.path[3]) {
+          console.log(element.style.height);
+          if(element.style.height === "230px") {
+            element.style.height = "175px";
+            element.classList.remove("active");
+          } else {
+            element.style.height = "230px";
+            element.classList.add("active");
+          }
+        }
+      });
+
     }
+
 
     function dispalyAttachIcons() {
       let element = document.getElementById("attachIcons");
@@ -154,7 +192,7 @@
 
     });
 
-    
+
 </script>
 
 </body>

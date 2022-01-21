@@ -395,6 +395,11 @@
     border-radius: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
+    height: 175px;
+}
+
+#root .chatbox .feed.active {
+    height: 230px;
 }
 
 #root .chatbox .feed .user-profile-container {
@@ -483,6 +488,17 @@
     align-items: center;
 }
 
+#root .chatbox .feed .comment-like-share .bxs-like {
+    height: 18px;
+    color: #494747;
+}
+
+#root .chatbox .feed.liked .comment-like-share .bxs-like {
+    transition: all 0.1s ease;
+    font-size: 19px;
+    color: #3333f3;
+}
+
 #root .chatbox .feed .comment-like-share div {
     width: 180px;
     display: flex;
@@ -510,6 +526,10 @@
     padding-top: 0;
     visibility: hidden;
     height: 0;
+}
+
+#root .chatbox .feed.active .start-comment {
+    visibility: visible;
 }
 
 #root .chatbox .feed .start-comment .container-img {

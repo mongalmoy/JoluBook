@@ -1,6 +1,6 @@
 <%- include('partials/header',{user:currentuser}); -%>
 
-<div class="chatbox" id="chatbox">
+<div class="chatbox" id="chatbox" onclick="closePopup()" >
   <div>
     <% allposts.forEach(function(post){ %>
     <div class="feed">
@@ -21,15 +21,36 @@
       <div class="user-chatbox">
         <p><%=post.post%></p>
       </div>
+      <% if(post.posttype==="1"){ %>
+          <a target="_blank" href="./uploads/<%=post.postfile%>"><button type="button" name="button">Click Here to see the file</button></a>
+          <% }%>
+      <% if(post.posttype==="2"){ %>
+        <img style="width:350px" src="./uploads/<%=post.postfile%>" alt="Attached Image">
+        <% }%>
+      <% if(post.posttype==="3"){ %>
+        <video width="400" height="300" controls>
+          <source src="./uploads/<%=post.postfile%>" type="video/mp4">
+          </video>
+            <% }%>
+      <% if(post.posttype==="4"){ %>
+          <audio controls>
+          <source src="./uploads/<%=post.postfile%>" type="audio/mpeg">
+          </audio>
+      <% }%>
       <hr style="margin: 4px 0; border: 0; height: 1px;">
       <div class="comment-like-share">
-        <div onclick="handleClickOnLike()"> <i class='add-like bx bxs-like'></i> <span id="countLike"></span> <span>Like</span> </div>
-        <div onclick="displayCommentSection()"> <i class='bx bx-comment-detail'></i> <span id="countComment"></span> <span>Comment</span> </div>
+        <div onclick="handleClickOnLike(event)" > <i class='bx bxs-like'></i> <span id="countLike"></span> <span>Like</span> </div>
+        <div onclick="displayCommentSection(event)"> <i class='bx bx-comment-detail'></i> <span id="countComment"></span> <span>Comment</span> </div>
         <div > <i class="fal fa-share"></i> <span id="countShare"></span> <span>Share</span></div>
       </div>
+
+
+      <!--Start Comment Div-->
+
       <div class="start-comment">
         <div class="container-img">
-          <img src="/images/<%=currentuser.dp%>" alt="_image">
+          <!-- <img src="/images/<%=currentuser.dp%>" alt="_image"> -->
+          <img src="/images/mongalmoy_img.jpg" alt="_image">
         </div>
         <div class="input-comment">
           <input type="text" name="inputComment">
@@ -39,6 +60,7 @@
           </div>
         </div>
       </div>
+
     </div>
     <% }) %>
 
@@ -47,8 +69,9 @@
 </div>
 
 
-<div class="post-box-container" id="sendFormDiv">
-  <form action="/addpost" method="POST">
+<div class="post-box-container" id="sendFormDiv" onclick="closePopup()" >
+
+  <form action="/addpost" method="POST" enctype="multipart/form-data">
     <div class="post-heading">
       <div>
         <p>Create a post</p>
@@ -87,37 +110,37 @@
         <li>
           <div onclick="handleAttachImage()" class="image-holder">
             <i class="fas fa-image"></i>
-            <input class="input-file"  type="file" name="postAttachImage" accept=".png, .jpeg, .jpg" >
+            <input class="input-file"  type="file" name="postfile" accept=".png, .jpeg, .jpg,.jpe,.mp4" >
           </div>
           <span class="tooltip">Image</span>
         </li>
 
-        <!-- <li>
+         <li>
           <div onclick="handleAttachDocument()" class="document-holder">
             <i class="far fa-file"></i>
-            <input class="input-file" type="file" name="postAttachDocument" accept=".docx, .doc, .pdf, .xlsx" >
+            <input class="input-file" type="file" name="postfile" accept=".xlsx,.xls ,.doc, .docx,.ppt, .pptx,.txt,.pdf" >
           </div>
           <span class="tooltip">Document</span>
-        </li> -->
+        </li>
 
-        <!-- <li>
+         <li>
           <div onclick="handleAttachAudio()" class="audio-holder">
             <i class="fas fa-headphones-alt"></i>
-            <input class="input-file" type="file" name="postAttachAudio" accept=".mp3, .wav" >
+            <input class="input-file" type="file" name="postfile" accept=".mp3, .wav" >
           </div>
           <span class="tooltip">Audio</span>
-        </li> -->
+        </li>
 
       </ul>
 
     </div>
 
-    
-    <!-- <video id="video" width="380" height="280" playsinline autoplay></video>
-    <button id="capture">Capture</button>
-    <canvas id="canvas" width="380" height="280"></canvas> -->
 
-    
+    <video id="video" width="380" height="280" playsinline autoplay></video>
+    <button id="capture">Capture</button>
+    <canvas id="canvas" width="380" height="280"></canvas>
+
+
     <div class="attach" onclick="dispalyAttachIcons()">
       <i class="far fa-paperclip"></i>
     </div>
@@ -126,7 +149,8 @@
 </div>
 
 
-<div id="openStartDiv" class="start-post-div">
+
+<div id="openStartDiv" class="start-post-div" onclick="closePopup()" >
 
     <div class="post-body">
 
