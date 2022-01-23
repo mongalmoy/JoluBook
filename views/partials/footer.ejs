@@ -101,6 +101,15 @@
       }
     }
 
+    function displayEdit() {
+      const element = document.getElementById('outer-display-edit-div');
+      if(element.style.display === "block"){
+        element.style.display = "none";
+      } else {
+        element.style.display = "block";
+      }
+    }
+
 
     function handleClickOnLike(event) {
       // document.querySelectorAll(".add-like").style.fontSize = "20px";
@@ -127,11 +136,11 @@
       feedElements.forEach( function(element) {
         if(element===event.path[2] || element===event.path[3]) {
           console.log(element.style.height);
-          if(element.style.height === "230px") {
-            element.style.height = "175px";
+          if(element.style.height === "260px") {
+            element.style.height = "210px";
             element.classList.remove("active");
           } else {
-            element.style.height = "230px";
+            element.style.height = "260px";
             element.classList.add("active");
           }
         }

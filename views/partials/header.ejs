@@ -36,7 +36,9 @@
               <div class="envelop-container"> <a href=""><i class="fas fa-envelope"></i></a> </div>
             </li>
             <li class="nav-link nav-link-img">
-              <img src="./uploads/<%=user.dp%>" alt="_image">
+              <div>
+                <img src="./uploads/<%=user.dp%>" alt="_image">
+              </div>
             </li>
 
             <li class="nav-item dropdown">
@@ -46,6 +48,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="navlinkDropdown">
                 <li><a class="dropdown-item" href="account">Account</a></li>
                 <li><a class="dropdown-item" href="inbox">Inbox</a></li>
+                <li><a class="dropdown-item" href="/logout">My Posts</a></li>
                 <li><a class="dropdown-item" href="/logout">Log out</a></li>
                 <!-- <i class='nav-link bx bx-log-out'></i> -->
               </ul>

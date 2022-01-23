@@ -4,6 +4,7 @@
   <div>
     <% allposts.forEach(function(post){ %>
     <div class="feed">
+
       <div class="user-profile-container">
         <div class="user-img">
           <img src="./uploads/<%=post.authordp%>" alt="">
@@ -17,26 +18,84 @@
           <i class="fas fa-globe-asia"></i>
           <p><%= post.posttime %></p>
         </div>
+        
+        <div onclick="displayEdit()" class="three-dots" >
+          <i class='bx bx-dots-horizontal-rounded'></i>
+        </div>
+
+        <div class="outer-display-edit-div" id="outer-display-edit-div">
+          <div class="inner-display-edit-div">
+
+            <div class="item">
+              <div class="item-icon">
+                <i class="far fa-bookmark"></i>
+              </div>
+              <div class="item-contents">
+                <div>
+                  <p>Save</p>
+                  <p>Save for latter</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="item">
+              <div class="item-icon">
+                <i class="fas fa-link"></i>
+              </div>
+              <div class="item-contents">
+                <div>
+                  <p>Copy link</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="item">
+              <div class="item-icon">
+                <i class="fas fa-pen"></i>
+              </div>
+              <div class="item-contents">
+                <div>
+                  <p>Edit post</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="item">
+              <div class="item-icon">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <div class="item-contents">
+                <div>
+                  <p>Delete post</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
+
       <div class="user-chatbox">
         <p><%=post.post%></p>
-      </div>
-      <% if(post.posttype==="1"){ %>
+        <% if(post.posttype==="1"){ %>
           <a target="_blank" href="./uploads/<%=post.postfile%>"><button type="button" name="button">Click Here to see the file</button></a>
           <% }%>
-      <% if(post.posttype==="2"){ %>
-        <img style="width:350px" src="./uploads/<%=post.postfile%>" alt="Attached Image">
+        <% if(post.posttype==="2"){ %>
+          <img style="width:350px" src="./uploads/<%=post.postfile%>" alt="Attached Image">
         <% }%>
-      <% if(post.posttype==="3"){ %>
-        <video width="400" height="300" controls>
-          <source src="./uploads/<%=post.postfile%>" type="video/mp4">
+        <% if(post.posttype==="3"){ %>
+          <video width="400" height="300" controls>
+            <source src="./uploads/<%=post.postfile%>" type="video/mp4">
           </video>
-            <% }%>
-      <% if(post.posttype==="4"){ %>
+        <% }%>
+        <% if(post.posttype==="4"){ %>
           <audio controls>
           <source src="./uploads/<%=post.postfile%>" type="audio/mpeg">
           </audio>
-      <% }%>
+        <% }%>
+      </div>
+      
       <hr style="margin: 4px 0; border: 0; height: 1px;">
       <div class="comment-like-share">
         <div onclick="handleClickOnLike(event)" > <i class='bx bxs-like'></i> <span id="countLike"></span> <span>Like</span> </div>
@@ -136,9 +195,9 @@
     </div>
 
 
-    <video id="video" width="380" height="280" playsinline autoplay></video>
+    <!-- <video id="video" width="380" height="280" playsinline autoplay></video>
     <button id="capture">Capture</button>
-    <canvas id="canvas" width="380" height="280"></canvas>
+    <canvas id="canvas" width="380" height="280"></canvas> -->
 
 
     <div class="attach" onclick="dispalyAttachIcons()">
