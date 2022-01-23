@@ -1142,6 +1142,10 @@
     padding: 10px 20px;
 }
 
+.user-profile .user-name-img {
+    position: relative;
+}
+
 
 .user-profile .user-name-img img {
     height: 45px;
@@ -1150,6 +1154,26 @@
 
 .user-profile .user-name-img p {
     display: inline;
+}
+
+.user-profile .user-name-img .remove-dp {
+    position: absolute;
+    right: 5px;
+    bottom: 0px;
+}
+
+.user-profile .user-name-img .remove-dp button {
+    padding: 8px 24px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #b6b90c;
+    opacity: 0.9;
+}
+
+.user-profile .user-name-img .remove-dp button:hover {
+    opacity: 1;
 }
 
 .account-page-outer .account-page-inner .user-profile hr.main-hr {
@@ -1204,7 +1228,7 @@
     height: 50px;
 }
 
-.save-button button:nth-child(1) {
+.save-button button {
     position: absolute;
     left: 16px;
     padding: 8px 24px;
@@ -1217,13 +1241,19 @@
     width: 96px;
 }
 
-.save-button button:nth-child(1):hover, .save-button button:nth-child(2):hover {
+.save-button button:hover {
     opacity: 1;
 }
 
-.save-button button:nth-child(2) {
+.delete-button {
+    padding: 10px;
+    position: relative;
+    height: 50px;
+}
+
+.delete-button button {
     position: absolute;
-    left: 130px;
+    right: 16px;
     padding: 8px 24px;
     bottom: 20px;
     border: none;
@@ -1231,7 +1261,10 @@
     color: #fff;
     background-color: #e90000;
     opacity: 0.8;
-    width: 96px;
+}
+
+.delete-button button:hover {
+    opacity: 1;
 }
 /******************* Account Page Ends *******************/
 
