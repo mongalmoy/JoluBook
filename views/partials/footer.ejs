@@ -1,5 +1,3 @@
-
-
 <!-- Mongalmoy Profile -->
 
 <div class="owner-profile" id="mongalmoyProfile">
@@ -7,7 +5,7 @@
   <i onclick="closePopup1()" class="bx bx-x"></i>
 
   <div class="profile-img">
-      <img src="images/mongalmoy_img.jpg" ></img>
+    <img src="images/mongalmoy_img.jpg"></img>
   </div>
   <div class="profile-details">
     <h1>Mongalmoy Karmakar</h1>
@@ -17,9 +15,10 @@
   </div>
   <div class="social-media-details">
     <ul>
-      <li><a href="https://www.linkedin.com/in/mongalmoy-karmakar-20595a205/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
+      <li><a href="https://www.linkedin.com/in/mongalmoy-karmakar-20595a205/" target="_blank"><i
+            class='bx bxl-linkedin-square'></i></a></li>
       <li><a href="https://github.com/mongalmoy" target="_blank"><i class='bx bxl-github'></i></a></li>
-      <li><a href="https://www.instagram.com/iam_mongalmoy/" target="_blank"><i class='bx bxl-instagram' ></i></a></li>
+      <li><a href="https://www.instagram.com/iam_mongalmoy/" target="_blank"><i class='bx bxl-instagram'></i></a></li>
     </ul>
   </div>
 </div>
@@ -31,7 +30,7 @@
   <i onclick="closePopup2()" class="bx bx-x"></i>
 
   <div class="profile-img">
-      <img src="images/souviksarkhel_img.jpg" ></img>
+    <img src="images/souviksarkhel_img.jpeg"></img>
   </div>
   <div class="profile-details">
     <h1>Souvik Sarkhel</h1>
@@ -43,7 +42,7 @@
     <ul>
       <li><a href="https://www.linkedin.com/in/souviksarkhel/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
       <li><a href="https://github.com/souviksarkhel621" target="_blank"><i class='bx bxl-github'></i></a></li>
-      <li><a href="https://www.instagram.com/the_hellslyte_/" target="_blank"><i class='bx bxl-instagram' ></i></a></li>
+      <li><a href="https://www.instagram.com/the_hellslyte_/" target="_blank"><i class='bx bxl-instagram'></i></a></li>
     </ul>
   </div>
 </div>
@@ -51,158 +50,200 @@
 
 
 
-    <div class="footer" id="footer">
-        <p>Made with &#10084;&#65039; By <span class="span-1" onclick="openPopup1()" onmousemove="closePopup2()" >Mongalmoy Karmakar</span> & <span class="span-2"  onclick="openPopup2()" onmousemove="closePopup1()">Souvik Sarkhel</span></p>
-    </div>
+<div class="footer" id="footer" onclick="removeCoverEditPopup()">
+  <p>Made with &#10084;&#65039; By <span class="span-1" onclick="handleOwnerProfile(event)"
+      onmousemove="closePopup2()">Mongalmoy Karmakar</span> & <span class="span-2" onclick="handleOwnerProfile(event)"
+      onmousemove="closePopup1()">Souvik Sarkhel</span></p>
+</div>
 </div>
 
 <script>
+  function handleOwnerProfile(evt) {
+    if(evt.target.innerText==="Mongalmoy Karmakar"){
+      openPopup1();
+    } else if(evt.target.innerText==="Souvik Sarkhel") {
+      openPopup2();
+    } 
+  }
 
-    function openPopup1() {
-      document.getElementById('mongalmoyProfile').style.display = "block";
+  function openPopup1() {
+    const element = document.getElementById('mongalmoyProfile');
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
     }
+  }
 
-    function closePopup1() {
-      document.getElementById('mongalmoyProfile').style.display = "none";
+  function closePopup1() {
+    document.getElementById('mongalmoyProfile').style.display = "none";
+  }
+
+  function openPopup2() {
+    const element = document.getElementById('souvikProfile');
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
     }
+  }
 
-    function openPopup2() {
-      document.getElementById('souvikProfile').style.display = "block";
+  function closePopup2() {
+    document.getElementById('souvikProfile').style.display = "none";
+  }
+
+  function closePopup() {
+    document.getElementById('mongalmoyProfile').style.display = "none";
+    document.getElementById('souvikProfile').style.display = "none";
+    removeCoverEditPopup();
+  }
+
+  function openForm() {
+    document.getElementById('openStartDiv').style.opacity = 0.2;
+    document.getElementById('sendFormDiv').style.display = "block";
+    document.getElementById('chatbox').style.opacity = 0.2;
+  }
+
+  function closeForm() {
+    document.getElementById('openStartDiv').style.opacity = 1;
+    document.getElementById('sendFormDiv').style.display = "none";
+    document.getElementById('chatbox').style.opacity = 1;
+  }
+
+  function handleChange() {
+    const inputText = document.getElementById('posttextarea').value;
+
+    if (inputText == "") {
+      document.getElementById('sendButton').style.color = '#929292';
+    } else {
+      document.getElementById('sendButton').style.color = '#0734fd';
     }
+  }
 
-    function closePopup2() {
-      document.getElementById('souvikProfile').style.display = "none";
+  function displayEdit() {
+    const element = document.getElementById('outer-display-edit-div');
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
     }
+  }
 
-    function closePopup() {
-      document.getElementById('mongalmoyProfile').style.display = "none";
-      document.getElementById('souvikProfile').style.display = "none";
-    }
 
-    function openForm(){
-      document.getElementById('openStartDiv').style.opacity = 0.2;
-      document.getElementById('sendFormDiv').style.display = "block";
-      document.getElementById('chatbox').style.opacity = 0.2;
-    }
-
-    function closeForm() {
-      document.getElementById('openStartDiv').style.opacity = 1;
-      document.getElementById('sendFormDiv').style.display = "none";
-      document.getElementById('chatbox').style.opacity = 1;
-    }
-
-    function handleChange(){
-      const inputText = document.getElementById('posttextarea').value;
-
-      if(inputText== ""){
-        document.getElementById('sendButton').style.color = '#929292';
-      } else {
-        document.getElementById('sendButton').style.color = '#0734fd';
+  function handleClickOnLike(event) {
+    // document.querySelectorAll(".add-like").style.fontSize = "20px";
+    let feedElements = document.querySelectorAll(".feed");
+    console.log(event.path[2]);
+    console.log(event.path[3]);
+    feedElements.forEach(function (element) {
+      if (element === event.path[2] || element === event.path[3]) {
+        console.log(element.style.height);
+        // if(element.style.height === "18px") {
+        //   element.style.height = "19px";
+        //   element.classList.add("liked");
+        // } else {
+        //   element.style.height = "19px";
+        //   element.classList.remove("liked");
+        // }
       }
-    }
+    })
+  }
 
-    function displayEdit() {
-      const element = document.getElementById('outer-display-edit-div');
-      if(element.style.display === "block"){
-        element.style.display = "none";
-      } else {
-        element.style.display = "block";
+
+  function displayCommentSection(event) {
+    let feedElements = document.querySelectorAll(".feed");
+    feedElements.forEach(function (element) {
+      if (element === event.path[2] || element === event.path[3]) {
+        console.log(element.style.height);
+        if (element.style.height === "260px") {
+          element.style.height = "210px";
+          element.classList.remove("active");
+        } else {
+          element.style.height = "260px";
+          element.classList.add("active");
+        }
       }
-    }
-
-
-    function handleClickOnLike(event) {
-      // document.querySelectorAll(".add-like").style.fontSize = "20px";
-      let feedElements = document.querySelectorAll(".feed");
-      console.log(event.path[2]);
-      console.log(event.path[3]);
-      feedElements.forEach(function(element) {
-        if(element===event.path[2] || element===event.path[3]) {
-          console.log(element.style.height);
-          // if(element.style.height === "18px") {
-          //   element.style.height = "19px";
-          //   element.classList.add("liked");
-          // } else {
-          //   element.style.height = "19px";
-          //   element.classList.remove("liked");
-          // }
-        }
-      })
-    }
-
-
-    function displayCommentSection(event) {
-      let feedElements = document.querySelectorAll(".feed");
-      feedElements.forEach( function(element) {
-        if(element===event.path[2] || element===event.path[3]) {
-          console.log(element.style.height);
-          if(element.style.height === "260px") {
-            element.style.height = "210px";
-            element.classList.remove("active");
-          } else {
-            element.style.height = "260px";
-            element.classList.add("active");
-          }
-        }
-      });
-
-    }
-
-
-    function dispalyAttachIcons() {
-      let element = document.getElementById("attachIcons");
-
-      if(element.style.display === "none") {
-        element.style.display = "block";
-      } else {
-        element.style.display = "none";
-      }
-    }
-
-    function handleCaptureButton() {
-      document.getElementById('capture').style.display = "block";
-    }
-
-    function handleAttachImage() {
-      document.querySelectorAll('.input-file')[0].click();
-    }
-
-    function handleAttachDocument() {
-      document.querySelectorAll('.input-file')[1].click();
-    }
-
-    function handleAttachAudio() {
-      document.querySelectorAll('.input-file')[2].click();
-    }
-
-
-    const cameraButton = document.getElementById('start-camera');
-    const video = document.getElementById('video');
-    const capture = document.getElementById('capture');
-    const canvas = document.getElementById('canvas');
-
-    cameraButton.addEventListener('click', async function() {
-        try {
-          const videoSrc = await navigator.mediaDevices.getUserMedia( {video: {width: 380, height: 280}} );
-          video.srcObject = videoSrc;
-        }
-        catch(e) {
-          console.log(e.toString());
-        }
-
-        const context = canvas.getContext('2d');
-        capture.addEventListener('click', function() {
-          context.drawImage(video, 0, 0, 380, 280);
-          // console.log('hii');
-          // const imgUrlData = canvas.toDataUrl(images/jpeg);
-
-          // console.log(imgUrlData);
-        });
-
     });
 
+  }
 
+
+  function dispalyAttachIcons() {
+    let element = document.getElementById("attachIcons");
+
+    if (element.style.display === "none") {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  }
+
+  function handleCaptureButton() {
+    document.getElementById('capture').style.display = "block";
+  }
+
+  function handleAttachImage() {
+    document.querySelectorAll('.input-file')[0].click();
+  }
+
+  function handleAttachDocument() {
+    document.querySelectorAll('.input-file')[1].click();
+  }
+
+  function handleAttachAudio() {
+    document.querySelectorAll('.input-file')[2].click();
+  }
+
+
+  const cameraButton = document.getElementById('start-camera');
+  const video = document.getElementById('video');
+  const capture = document.getElementById('capture');
+  const canvas = document.getElementById('canvas');
+
+  cameraButton.addEventListener('click', async function () {
+    try {
+      const videoSrc = await navigator.mediaDevices.getUserMedia({
+        video: {
+          width: 380,
+          height: 280
+        }
+      });
+      video.srcObject = videoSrc;
+    } catch (e) {
+      console.log(e.toString());
+    }
+
+    const context = canvas.getContext('2d');
+    capture.addEventListener('click', function () {
+      context.drawImage(video, 0, 0, 380, 280);
+      // console.log('hii');
+      // const imgUrlData = canvas.toDataUrl(images/jpeg);
+
+      // console.log(imgUrlData);
+    });
+
+  });
+
+
+  function displayCoverEditPopup() {
+    const element = document.getElementById('coverEditPopup');
+    if (element.style.display === "none") {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  }
+
+  function removeCoverEditPopup() {
+    document.getElementById('coverEditPopup').style.display = "none";
+  }
+
+  function inputCoverPhoto() {
+    const element = document.getElementById('inputUserCoverPhoto');
+    element.click();
+  }
 </script>
 
 </body>
+
 </html>

@@ -1,0 +1,96 @@
+<%- include('partials/header',{user:currentuser}); -%>
+
+<div class="user-page-outer" onclick="closePopup()">
+    <div style="position: relative; width: 1000px;">
+
+        <div class="user-page-profile-cover">
+            <div class="user-page-cover">
+                <img onclick="removeCoverEditPopup()" src="/images/cover-photo.jpg" alt="cover_photo">
+                <div class="edit-cover">
+                    <span onclick="displayCoverEditPopup()"> <i class="far fa-edit"></i> Edit</span>
+                </div>
+                <div class="cover-edit-popup" id="coverEditPopup">
+                    <div class="cover-upload">
+                        <i class="fal fa-upload"></i>
+                        <span onclick="inputCoverPhoto()">Upload Photo</span>
+                        <input id="inputUserCoverPhoto" name="inputUserCoverPhoto" type="file" accept=".jpeg, .jpg">
+                    </div>
+                    <div class="cover-delete">
+                        <i class="fal fa-trash-alt"></i>
+                        <span>Delete Photo</span>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div class="user-page-profile">
+                <div class="user-page-img-container">
+                    <img src="/images/mongalmoy_img.jpg" alt="">
+                </div>
+    
+                <div class="user-page-profile-name-details">
+                    <div class="user-page-profile-details">
+                        <h1>Mongalmoy Karmakar</h1>
+                        <h4>JGEC (2018-2022)</h4>
+                        <p>Purba Barddhaman, West Bengal, India</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr style="margin: 0 5px;">
+
+            <div class="user-page-bio">
+                <span>"I would rather be despised of who I am, rather than loved by who I am not."</span>
+            </div>
+        </div>
+
+        <div class="userpage-otherdetail-feed">
+            <div style="display: flex;">
+                <div class="userpage-other-detail"></div>
+
+                <div class="userpage-feed-container">
+                  <div class="userpage-chatbox">
+
+                    <div class="userpage-feed">
+
+                      <div class="userpage-feed-profile">
+                        <div class="userpage-feed-profile-img">
+                          <img src="/images/mongalmoy_img.jpg" alt="">
+                        </div>
+                        <div class="userpage-feed-profile-name">
+                          <div>
+                            <p>Mongalmoy Karmakar</p>
+                            <p>28 Jan, 2022 at 10:54 pm</p>
+                          </div>
+                        </div>
+                        <div class="userpage-threedot-container">
+                          <div class="userpage-threedot">
+                            <i class="fas fa-ellipsis-h"></i>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="userpage-feed-content">
+                        <div class="userpage-feed-content-text">
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quod illo assumenda atque cumque commodi quaerat laudantium magni est! Quaerat autem voluptate inventore consequatur, libero, dolorum corporis magni consequuntur, illum maiores facilis enim repellat eius accusamus ipsa est magnam animi placeat explicabo esse alias rem architecto fugit nobis. Quibusdam commodi quod expedita, veniam ut ullam aperiam quaerat totam rem dolore repellendus aliquam alias pariatur maxime similique exercitationem. Consequuntur sunt, sapiente error id a vel ut? Consequatur iste delectus dolor commodi suscipit asperiores, libero corrupti id ullam eveniet autem aspernatur. Eaque error ratione illo quisquam, dolores amet dolorem eos delectus cum.</p>
+                        </div>
+                        <div class="userpage-feed-content-audio">
+                          <audio controls><source src="/uploads/1642845369330-[Songs.PK] Raaz 3 - 05 - Kya Raaz Hai.mp3"></audio>
+                        </div>
+                        <div class="userpage-feed-content-video">
+                          <video controls><source src="/video/VID20211212080322.mp4"></video>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%- include('partials/footer'); -%>

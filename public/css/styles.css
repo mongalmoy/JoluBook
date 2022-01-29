@@ -16,6 +16,7 @@
     left: 0;
     top: 0;
     width: 100%;
+    height: 60px;
 }
 
 .container-fluid .navbar-brand {
@@ -69,6 +70,7 @@
     border-radius: 50%;
     height: 45px;
     width: 50px;
+    object-fit: cover;
 }
 
 #userName{
@@ -386,19 +388,19 @@
     background-color: #E0E0E0;
     position: absolute;
     left: 0;
-    top: 85px;
+    top: 65px;
     width: 100%;
     padding-bottom: 68px;
 }
 
-#root .chatbox {
+.chatbox {
     display: flex;
     justify-content: center;
     margin-top: 6px;
     position: relative;
 }
 
-#root .chatbox .feed {
+.chatbox .feed {
     width: 600px;
     background-color: #fff;
     color: #494747;
@@ -409,16 +411,16 @@
     border: 1px solid #ddd;
 }
 
-#root .chatbox .feed.active {
+.chatbox .feed.active {
     height: 230px;
 }
 
-#root .chatbox .feed .user-profile-container {
+.chatbox .feed .user-profile-container {
     position: relative;
     height: 75px;
 }
 
-#root .chatbox .feed .user-profile-container .user-img {
+.chatbox .feed .user-profile-container .user-img {
     width: 80px;
     height: 80px;
     position: absolute;
@@ -426,13 +428,14 @@
     top: 0;
 }
 
-#root .chatbox .feed .user-profile-container .user-img img{
+.chatbox .feed .user-profile-container .user-img img{
     height: 60px;
     width: 60px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
-#root .chatbox .feed .user-info {
+.chatbox .feed .user-info {
     margin: 0;
     padding: 0;
     height: 80px;
@@ -441,22 +444,22 @@
     top: 0;
 }
 /* 99A799 */
-#root .chatbox .feed .user-info p {
+.chatbox .feed .user-info p {
     margin: 0;
     padding: 0;
 }
 
-#root .chatbox .feed .user-name {
+.chatbox .feed .user-name {
     color: black;
     font-weight: 400;
 }
 
-#root .chatbox .feed .user-info .user-bio {
+.chatbox .feed .user-info .user-bio {
     color: #99A799;
     font-size: 12px;
 }
 
-#root .chatbox .feed .user-profile-container .post-time-div {
+.chatbox .feed .user-profile-container .post-time-div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -468,13 +471,13 @@
     font-size: 12px;
 }
 
-#root .chatbox .feed .user-profile-container .post-time-div i {
+.chatbox .feed .user-profile-container .post-time-div i {
     color: #99A799;
     font-size: 12px;
     display: inline;
 }
 
-#root .chatbox .feed .user-profile-container .post-time-div  p {
+.chatbox .feed .user-profile-container .post-time-div  p {
     color: #99A799;
     font-size: 12px;
     display: inline;
@@ -484,7 +487,7 @@
     padding-left: 1px;
 }
 
-#root .chatbox .feed .user-profile-container .three-dots {
+.chatbox .feed .user-profile-container .three-dots {
     position: absolute;
     right: 5px;
     top: 5px;
@@ -577,6 +580,7 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 #root .chatbox .feed .start-comment .input-comment {
@@ -714,6 +718,7 @@
     height: 60px;
     width: 60px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .start-post-div .post-body .start-post-content {
@@ -809,6 +814,7 @@
     width: 35px;
     border-radius: 50%;
     margin-left: 10px;
+    object-fit: cover;
 }
 
 .post-box-container .post-name-img .post-name {
@@ -974,6 +980,519 @@
 
 
 
+/***************** User page starts ****************/
+.user-page-outer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    position: relative;
+    width: 100%
+}
+
+.user-page-profile-cover {
+    background-color: #fff;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    z-index: 99;
+}
+
+.user-page-cover {
+    width: 1000px;
+    height: 180px;
+    position: relative;
+}
+
+.user-page-cover img {
+    width: 1000px;
+    height: 180px;
+    object-fit: fill;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    z-index: 98;
+}
+
+.user-page-cover .edit-cover {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 99;
+}
+
+.user-page-cover .edit-cover span {
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.user-page-cover .edit-cover span:hover {
+    background-color: #ddd;
+}
+
+.cover-edit-popup {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px;
+    padding-left: 5px;
+    display: none;
+    z-index: 99;
+    background-color: #fff;
+}
+
+.cover-edit-popup .cover-upload, .cover-edit-popup .cover-delete {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.cover-edit-popup .cover-upload:hover, .cover-edit-popup .cover-delete:hover {
+    background-color: #f1f1f1;
+}
+
+.cover-edit-popup .cover-upload span {
+    padding-left: 5px;
+    font-size: 16px;
+}
+
+.cover-edit-popup .cover-delete span {
+    padding-left: 5px;
+    font-size: 16px;
+}
+
+#inputUserCoverPhoto {
+    display: none;
+}
+
+.user-page-profile {
+    width: 1000px;
+    padding: 10px;
+    height: 150px;
+}
+
+.user-page-img-container {
+    border-radius: 50%;
+    border: 8px solid #f0f0f0;
+    position: absolute;
+    left: 50px;
+    top: 150px;
+}
+
+.user-page-img-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.user-page-profile .user-page-profile-name-details {
+    height: 120px;
+}
+
+.user-page-profile-details {
+    padding: 10px;
+    padding-left: 230px;
+}
+
+.user-page-profile-details h1 {
+    font-weight: 900;
+    font-size: 36px;
+    color: #000;
+}
+
+.user-page-profile-details h4 {
+    font-size: 18px;
+    color: #3b3b3b;
+    font-weight: 600;
+}
+
+.user-page-profile-details p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #868686;
+}
+
+.user-page-bio {
+    width: 1000px;
+    background-color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.user-page-bio span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.userpage-otherdetail-feed {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    margin-top: 10px;
+}
+
+.userpage-other-detail {
+    width: 380px;
+    margin-right: 20px;
+}
+
+.userpage-feed-container {
+    width: 600px;
+    position: relative;
+}
+
+.userpage-chatbox {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+}
+
+.userpage-chatbox .userpage-feed {
+    width: 600px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.userpage-feed-profile {
+    display: flex;
+    position: relative;
+    height: 80px;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+.userpage-feed-profile-img {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userpage-feed-profile-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    object-fit: cover;
+}
+
+.userpage-feed-profile-name {
+    height: 60px;
+    width: calc(100% - 160px);
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.userpage-feed-profile-name p:nth-child(1) {
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(29, 29, 29);
+}
+
+.userpage-feed-profile-name p:nth-child(2) {
+    margin: 0;
+    font-weight: 400;
+    font-size: 12px;
+    color: #868686;
+}
+
+.userpage-threedot-container {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userpage-threedot {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.userpage-threedot i {
+    visibility: visible;
+    opacity: 0.8;
+    font-size: 20px;
+}
+
+.userpage-threedot:hover {
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.userpage-feed-content {
+    width: 600px;
+    padding: 0;
+    margin: 0;
+}
+
+.userpage-feed-content-text {
+    width: 100%;
+    padding: 2px 15px;
+}
+
+.userpage-feed-content-text p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #252525
+}
+
+.userpage-feed-content-audio {
+    padding: 2px 15px;
+}
+
+.userpage-feed-content-audio audio {
+    width: 100%;
+}
+
+.userpage-feed-content-video {
+    padding: 4px 0px;
+}
+
+.userpage-feed-content-video video {
+    width: 100%;
+    height: 400px;
+    object-fit: fill;
+}
+/***************** User page ends ******************/
+
+
+
+
+/***************** Jolutree Page Starts *********************/
+.jolutree-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.jolutree-row-container {
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+}
+
+.jolutree-link-container {
+    width: 100px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jolutree-link-container a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+/******************* Jolutree Page Ends ********************/
+
+
+
+
+/***************** Jolutree Year Page Starts *********************/
+.jolutree-year-page {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.jolutree-btn-grp {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jolutree-btn-grp__item {
+    width: 120px;
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.jolutree-btn-grp__item:nth-child(1) {
+    border-top-left-radius: 10px;
+}
+
+.jolutree-btn-grp__item:nth-child(7) {
+    border-top-right-radius: 10px;
+}
+
+.jolutree-btn-grp__item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: rebeccapurple;
+    transform: translateY(10px);
+    transition: all 0.3s ease-out;
+    opacity: 0;
+}
+
+.jolutree-btn-grp__item:hover::after {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.jolutree-btn-grp__item a {
+    font-size: 18px;
+    text-decoration: none;
+    color: rebeccapurple;
+    text-transform: capitalize;
+}
+
+.jolutree-btn-grp__item a:hover {
+    color: rebeccapurple;
+    text-transform: capitalize;
+}
+
+.jolutree-user-profiles {
+    margin: 20px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(300px, 500px));
+    width: 100vh;
+}
+
+.jolutree-user-profile-container {
+    width: 250px;
+    height: 280px;
+    display: grid;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 15px 20px;
+}
+
+.jolutree-user-profile-img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.jolutree-user-profile-img-border {
+    border-radius: 50%;
+    border: 5px solid #9265be;
+}
+
+.jolutree-user-profile-img-container img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.jolutree-user-profile-container-divider {
+    margin: 0 110px;
+    text-align: center;
+    border: 0;
+    border-bottom: 4px dotted rebeccapurple;
+    background-color: #fff;
+}
+
+.jolutree-user-profile-other-details {
+    padding: 10px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jolutree-user-profile-other-details div h6 {
+    margin: 3px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.jolutree-user-profile-other-details div p {
+    margin: 3px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.jolutree-user-profile-social-media {
+    width: 100%;
+    height: calc(100% - 208px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jolutree-user-profile-social-media ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.jolutree-user-profile-social-media ul li {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+
+.jolutree-user-profile-social-media ul li a {
+    text-decoration: none;
+    color: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jolutree-user-profile-social-media ul li a i {
+    font-size: 24px;
+}
+/***************** Jolutree Year Page Starts *********************/
+
+
+
+
 /******************* Owner Profile Starts ******************/
 #root .owner-profile {
     width: 380px;
@@ -1002,7 +1521,7 @@
 #mongalmoyProfile {
     position: fixed;
     left: 565px;
-    bottom: 85px;
+    bottom: 75px;
     display: none;
 }
 
@@ -1010,7 +1529,7 @@
     content: "";
     position: fixed;
     left: 730px;
-    bottom: 35px;
+    bottom: 25px;
     margin-left: -5px;
     border-width: 25px;
     border-style: solid;
@@ -1020,7 +1539,7 @@
 #souvikProfile {
     position: fixed;
     left: 700px;
-    bottom: 85px;
+    bottom: 75px;
     display: none;
 }
 
@@ -1028,7 +1547,7 @@
     content: "";
     position: fixed;
     left: 870px;
-    bottom: 35px;
+    bottom: 25px;
     margin-left: -5px;
     border-width: 25px;
     border-style: solid;
@@ -1047,6 +1566,7 @@
     border-radius: 50%;
     outline: none;
     height: 130px;
+    object-fit: contain;
 }
 
 .owner-profile .profile-details {
@@ -1150,6 +1670,7 @@
 .user-profile .user-name-img img {
     height: 45px;
     width: 45px;
+    object-fit: cover;
 }
 
 .user-profile .user-name-img p {
@@ -1160,6 +1681,12 @@
     position: absolute;
     right: 5px;
     bottom: 0px;
+}
+
+.user-profile .user-name-img .remove-dp button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
 }
 
 .user-profile .user-name-img .remove-dp button {
@@ -1261,10 +1788,17 @@
     color: #fff;
     background-color: #e90000;
     opacity: 0.8;
+    font-weight: 500;
 }
 
 .delete-button button:hover {
     opacity: 1;
+    font-weight: 500;
+}
+
+.delete-button button a {
+    text-decoration: none;
+    color: #fff;
 }
 /******************* Account Page Ends *******************/
 
@@ -1277,16 +1811,20 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 50px;
     background-color: #041C32;
     color: #fff;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer p {
-    margin: 25px;
     text-align: center;
     font-size: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 .footer p span {

@@ -9,6 +9,7 @@
         <div class="user-img">
           <img src="./uploads/<%=post.authordp%>" alt="">
         </div>
+
         <div class="user-info">
           <p class="user-name"><%=post.author%></p>
           <p class="user-bio">Currently Working At: <strong><%=post.authorg%></strong></p>
@@ -18,7 +19,7 @@
           <i class="fas fa-globe-asia"></i>
           <p><%= post.posttime %></p>
         </div>
-        
+
         <div onclick="displayEdit()" class="three-dots" >
           <i class='bx bx-dots-horizontal-rounded'></i>
         </div>
@@ -33,11 +34,11 @@
               <div class="item-contents">
                 <div>
                   <p>Save</p>
-                  <p>Save for latter</p>
+                  <p>Save for later</p>
                 </div>
               </div>
             </div>
-  
+
             <div class="item">
               <div class="item-icon">
                 <i class="fas fa-link"></i>
@@ -48,28 +49,30 @@
                 </div>
               </div>
             </div>
-  
-            <div class="item">
-              <div class="item-icon">
-                <i class="fas fa-pen"></i>
-              </div>
-              <div class="item-contents">
-                <div>
-                  <p>Edit post</p>
+            <% if(post.poster===currentuser.username){ %>
+              <div class="item">
+                <div class="item-icon">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="item-contents">
+                  <div>
+                    <p>Edit post</p>
+                  </div>
                 </div>
               </div>
-            </div>
-  
-            <div class="item">
-              <div class="item-icon">
-                <i class="fas fa-trash-alt"></i>
-              </div>
-              <div class="item-contents">
-                <div>
-                  <p>Delete post</p>
+
+              <div class="item">
+                <div class="item-icon">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+                <div class="item-contents">
+                  <div>
+                    <p>Delete post</p>
+                  </div>
                 </div>
               </div>
-            </div>
+
+            <% }%>
 
           </div>
         </div>
@@ -95,7 +98,7 @@
           </audio>
         <% }%>
       </div>
-      
+
       <hr style="margin: 4px 0; border: 0; height: 1px;">
       <div class="comment-like-share">
         <div onclick="handleClickOnLike(event)" > <i class='bx bxs-like'></i> <span id="countLike"></span> <span>Like</span> </div>

@@ -19,9 +19,10 @@
                 <div class="user-name">
                     Mongalmoy Karmakar
                 </div> -->
-                <div class="remove-dp">
-                    <button >Remove DP</button>
-                </div>
+                <% if(accountholder.dp!="avater.jpeg"){ %>
+                    <div class="remove-dp"><button><a href="/removedp">Remove DP</a></button></div>
+                    <% }%>
+
             </div>
 
             <hr class="main-hr">
@@ -56,7 +57,7 @@
             </div>
 
             <div class="delete-button">
-                <button type="submit">Delete Account</button>
+                <button><a href="/deleteaccount">Delete Account</a></button>
             </div>
         </div>
 
