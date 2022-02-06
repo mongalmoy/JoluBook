@@ -3,14 +3,14 @@
 <div class="jolutree-page" onclick="closePopup()">
     <div>
 
-        <% for(let i=0;i<8;i++){ %>
+        <% for(let i=0;i<7;i++){ %>
             <div class="jolutree-row-container" style="margin-top: 10px;">
                 <%let j=(i*10)+1961%>
                 <%for(let k=j;k<(j+10);k++){%>
-                    <div class="jolutree-link-container"> <a href="/jolutree/<%=k%>"> <%=k%> </a> </div>
+                    <div class="jolutree-link-container"> <a href="/jolutree/<%=k%>/all"> <%=k%> </a> </div>
                 <%}%>
             </div>
-        <%}%>       
+        <%}%>
 
     </div>
 </div>

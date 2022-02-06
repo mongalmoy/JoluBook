@@ -1,6 +1,6 @@
 <%- include('partials/header',{user:currentuser}); -%>
 
-<div class="chatbox" id="chatbox" onclick="closePopup()" >
+<div class="chatbox" id="chatbox" onclick="closePopup()">
   <div>
     <% allposts.forEach(function(post){ %>
     <div class="feed">
@@ -20,7 +20,7 @@
           <p><%= post.posttime %></p>
         </div>
 
-        <div onclick="displayEdit()" class="three-dots" >
+        <div onclick="displayEdit()" class="three-dots">
           <i class='bx bx-dots-horizontal-rounded'></i>
         </div>
 
@@ -50,27 +50,27 @@
               </div>
             </div>
             <% if(post.poster===currentuser.username){ %>
-              <div class="item">
-                <div class="item-icon">
-                  <i class="fas fa-pen"></i>
-                </div>
-                <div class="item-contents">
-                  <div>
-                    <p>Edit post</p>
-                  </div>
+            <div class="item">
+              <div class="item-icon">
+                <i class="fas fa-pen"></i>
+              </div>
+              <div class="item-contents">
+                <div>
+                  <p>Edit post</p>
                 </div>
               </div>
+            </div>
 
-              <div class="item">
-                <div class="item-icon">
-                  <i class="fas fa-trash-alt"></i>
-                </div>
-                <div class="item-contents">
-                  <div>
-                    <p>Delete post</p>
-                  </div>
+            <div class="item">
+              <div class="item-icon">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+              <div class="item-contents">
+                <div>
+                  <p>Delete post</p>
                 </div>
               </div>
+            </div>
 
             <% }%>
 
@@ -82,28 +82,37 @@
       <div class="user-chatbox">
         <p><%=post.post%></p>
         <% if(post.posttype==="1"){ %>
-          <a target="_blank" href="./uploads/<%=post.postfile%>"><button type="button" name="button">Click Here to see the file</button></a>
-          <% }%>
+        <a target="_blank" href="./uploads/<%=post.postfile%>"><button type="button" name="button">Click Here to see the
+            file</button></a>
+        <% }%>
         <% if(post.posttype==="2"){ %>
-          <img style="width:350px" src="./uploads/<%=post.postfile%>" alt="Attached Image">
+        <img style="width:350px" src="./uploads/<%=post.postfile%>" alt="Attached Image">
         <% }%>
         <% if(post.posttype==="3"){ %>
-          <video width="400" height="300" controls>
-            <source src="./uploads/<%=post.postfile%>" type="video/mp4">
-          </video>
+        <video width="400" height="300" controls>
+          <source src="./uploads/<%=post.postfile%>" type="video/mp4">
+        </video>
         <% }%>
         <% if(post.posttype==="4"){ %>
-          <audio controls>
+        <audio controls>
           <source src="./uploads/<%=post.postfile%>" type="audio/mpeg">
-          </audio>
+        </audio>
         <% }%>
       </div>
 
       <hr style="margin: 4px 0; border: 0; height: 1px;">
       <div class="comment-like-share">
-        <div onclick="handleClickOnLike(event)" > <i class='bx bxs-like'></i> <span id="countLike"></span> <span>Like</span> </div>
-        <div onclick="displayCommentSection(event)"> <i class='bx bx-comment-detail'></i> <span id="countComment"></span> <span>Comment</span> </div>
-        <div > <i class="fal fa-share"></i> <span id="countShare"></span> <span>Share</span></div>
+        <form action="/addlike" method="post" onclick="submit()">
+          <i class="bx bxs-like"></i>
+          <span class="countLikes"></span>
+          <span>Like</span>
+        </form>
+        <form action="/addcomment">
+          <i class='bx bx-comment-detail'></i>
+          <span id="countComment"></span>
+          <span>Comment</span>
+        </form>
+        <!-- <div> <i class="fal fa-share"></i> <span id="countShare"></span> <span>Share</span></div> -->
       </div>
 
 
@@ -131,14 +140,14 @@
 </div>
 
 
-<div class="post-box-container" id="sendFormDiv" onclick="closePopup()" >
+<div class="post-box-container" id="sendFormDiv" onclick="closePopup()">
 
   <form action="/addpost" method="POST" enctype="multipart/form-data">
     <div class="post-heading">
       <div>
         <p>Create a post</p>
 
-      <i class=' close-button bx bx-x' onclick="closeForm()"></i>
+        <i class=' close-button bx bx-x' onclick="closeForm()"></i>
       </div>
     </div>
 
@@ -152,11 +161,12 @@
     </div>
 
     <div class="post-box-body">
-      <textarea name="inputText" id="posttextarea" cols="50" rows="6" placeholder="What do you want to talk about?" onkeypress="handleChange()" onkeyup="handleChange()" onchange="handleChange()"></textarea>
+      <textarea name="inputText" id="posttextarea" cols="50" rows="6" placeholder="What do you want to talk about?"
+        onkeypress="handleChange()" onkeyup="handleChange()" onchange="handleChange()"></textarea>
     </div>
 
     <div class="send-button">
-      <button type="submit" ><i id="sendButton" class='bx bxs-send'></i></button>
+      <button type="submit"><i id="sendButton" class='bx bxs-send'></i></button>
     </div>
 
     <div class="attach-icon-div" id="attachIcons">
@@ -172,23 +182,24 @@
         <li>
           <div onclick="handleAttachImage()" class="image-holder">
             <i class="fas fa-image"></i>
-            <input class="input-file"  type="file" name="postfile" accept=".png, .jpeg, .jpg,.jpe,.mp4" >
+            <input class="input-file" type="file" name="postfile" accept=".png, .jpeg, .jpg,.jpe,.mp4">
           </div>
           <span class="tooltip">Image</span>
         </li>
 
-         <li>
+        <li>
           <div onclick="handleAttachDocument()" class="document-holder">
             <i class="far fa-file"></i>
-            <input class="input-file" type="file" name="postfile" accept=".xlsx,.xls ,.doc, .docx,.ppt, .pptx,.txt,.pdf" >
+            <input class="input-file" type="file" name="postfile"
+              accept=".xlsx,.xls ,.doc, .docx,.ppt, .pptx,.txt,.pdf">
           </div>
           <span class="tooltip">Document</span>
         </li>
 
-         <li>
+        <li>
           <div onclick="handleAttachAudio()" class="audio-holder">
             <i class="fas fa-headphones-alt"></i>
-            <input class="input-file" type="file" name="postfile" accept=".mp3, .wav" >
+            <input class="input-file" type="file" name="postfile" accept=".mp3, .wav">
           </div>
           <span class="tooltip">Audio</span>
         </li>
@@ -212,18 +223,18 @@
 
 
 
-<div id="openStartDiv" class="start-post-div" onclick="closePopup()" >
+<div id="openStartDiv" class="start-post-div" onclick="closePopup()">
 
-    <div class="post-body">
+  <div class="post-body">
 
-      <div class="start-post-img">
-        <img src="./uploads/<%=currentuser.dp%>" alt="_userimage">
-      </div>
-      <div class="start-post-content">
-        <input onfocus="openForm()" placeholder="Add a post">
-      </div>
-
+    <div class="start-post-img">
+      <img src="./uploads/<%=currentuser.dp%>" alt="_userimage">
     </div>
+    <div class="start-post-content">
+      <input onfocus="openForm()" placeholder="Add a post">
+    </div>
+
+  </div>
 
 </div>
 

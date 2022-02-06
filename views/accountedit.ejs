@@ -1,90 +1,135 @@
 <%=user.name%><%- include('partials/header',{myname:user.name}); -%>
 
-<div class="account-page-outer">
-    <div class="account-page-inner">
-
-        <div class="home-link">
-            <p> <a href="/feed">Home </a> >><span><%=user.name%></span> </p>
+<div class="account-page">
+    <div class="account-page-heading-list">
+        <div>
+            <ul>
+                <li>
+                    <a href="#account-page-personal-section" class="edit-links active" aria-selected="true" tabindex="0" onclick="manageEditLinks(event)">Personal</a>
+                </li>
+                <li>
+                    <a href="#social-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1" onclick="manageEditLinks(event)">Social</a>
+                </li>
+                <li>
+                    <a href="#communication-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1" onclick="manageEditLinks(event)">Communication</a>
+                </li>
+                <li>
+                    <a href="#login-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1" onclick="manageEditLinks(event)">Login</a>
+                </li>
+            </ul>
         </div>
+    </div>
 
-        <div class="user-profile">
+    <div class="account-page-edit-section">
+        <div class="account-page-edit-container">
 
-            <div class="user-name-img">
-                <img src="/uploads/<%=accountholder.dp%>" alt="_image">
-                <p>&emsp;<strong><%=user.name%></strong></p>
-                <!-- <div class="user-img">
-                    <img src="/images/mongalmoy_img.jpg" alt="_image">
-                </div>
-                <div class="user-name">
-                    Mongalmoy Karmakar
-                </div> -->
-            </div>
+            <form action="/editaccount" method="post">
 
-            <hr class="main-hr">
-
-            <form method="POST" action="/editaccount" enctype="multipart/form-data">
-                <div class="user-profile-details">
-
-                    <div class="separate-div">
-                        <p><strong>Upload picture of yourself:</strong></p>
-                        <p>Upload files of type jpeg, jpg, png only.</p>
-                        <input name="newImg" type="file">
+                <div id="account-page-personal-section">
+                    <div>
+                        <h6>Upload profile picture of yourself</h6>
+                        <p>Upload files of type jpeg, jpg, png only. Max size : 1MB.</p>
+                        <input type="file">
                     </div>
-
-
-                    <div class="separate-div">
-                        <label for="name"><strong>Name:</strong></label>
-                        <input name="name" type="text" class="name"  value="<%=accountholder.name%>" readonly>
+                    <div>
+                        <p>Your Name:</p>
+                        <input type="text" id="inputName" placeholder="Enter your name">
                     </div>
-                    <div class="separate-div">
-                        <strong>Email:</strong>
-                        <input name="username" type="email" value="<%=accountholder.username%>" readonly>
+                    <div>
+                        <p>Your DOB:</p>
+                        <input type="date">
                     </div>
-                    <div class="separate-div">
-                        <strong>Mobile No:</strong>
-                        <input name="mobile" type="text" value="<%=accountholder.mobile%>">
-                    </div>
-                    <div class="separate-div">
-                        <strong>Currently Working At:</strong>
-                        <input name="currorg" type="text" value="<%=accountholder.currorg%>">
-                    </div>
-
-                    <div class="separate-div">
-                        <strong>Current City:</strong>
-                        <input name="currcity" type="text" value="<%=accountholder.currcity%>">
-                    </div>
-
-                    <div class="separate-div">
-                        <strong>Current Country:</strong>
-                        <input name="country" type="text" value="<%=accountholder.country%>">
-                    </div>
-                    <div class="separate-div">
-                        <strong>Hometown:</strong>
-                        <input name="hometown" type="text" value="<%=accountholder.hometown%>">
-                    </div>
-                    <div class="separate-div">
-                        <strong>Previously Worked At:</strong>
-                        <input name="prevorg" type="text" value="<%=accountholder.prevorg%>">
-                    </div>
-                    <div class="separate-div">
-                        <strong>Passout Year:</strong>
-                        <input name="year" type="text" value="<%=accountholder.year%>" readonly>
-                    </div>
-
-                    <div class="separate-div">
-                        <strong>Department:</strong>
-                        <input name="department" type="text" value=<%=accountholder.department%> readonly>
+                    <div>
+                        <p>Gender:</p>
+                        <input type="radio" id="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female">
+                        <label for="female">Female</label>
+                        <input type="radio" id="other">
+                        <label for="other">Other</label>
                     </div>
                 </div>
-
-                <div class="save-button">
-                    <button type="submit">Save</button>
+    
+                <div id="social-page-personal-section">
+                    <div>
+                        <p>Linkedin:</p>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <p>Github:</p>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <p>Facebook:</p>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <p>Instagram:</p>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <p>Your Website or Blog:</p>
+                        <input type="text">
+                    </div>
                 </div>
+    
+                <div id="communication-page-personal-section">
+                    <div>
+                        <p>Email Address:</p>
+                        <input type="email">
+                    </div>
+                    <div>
+                        <p>Optional Email Address:</p>
+                        <input type="email">
+                    </div>
+                    <div>
+                        <p>Current City:</p>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <p>Country:</p>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <p>Address</p>
+                        <textarea name="inputAddress" id="userAddress" cols="30" rows="2"></textarea>
+                    </div>
+                    <div>
+                        <p>Pincode:</p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Contact Number:</p>
+                        <input type="number">
+                    </div>
+                </div>
+    
+                <div id="login-page-personal-section">
+                    <div>
+                        <p>Current password:</p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>New password:</p>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <p>Confirm new password:</p>
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div>
+                    <button class="save-button">Save</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+    
             </form>
 
         </div>
-
     </div>
+
 </div>
 
-<%- include('partials/footer'); -%>
+
+<%- include('partials/footer') -%>

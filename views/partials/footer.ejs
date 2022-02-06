@@ -40,7 +40,8 @@
   </div>
   <div class="social-media-details">
     <ul>
-      <li><a href="https://www.linkedin.com/in/souviksarkhel/" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
+      <li><a href="https://www.linkedin.com/in/souviksarkhel/" target="_blank"><i
+            class='bx bxl-linkedin-square'></i></a></li>
       <li><a href="https://github.com/souviksarkhel621" target="_blank"><i class='bx bxl-github'></i></a></li>
       <li><a href="https://www.instagram.com/the_hellslyte_/" target="_blank"><i class='bx bxl-instagram'></i></a></li>
     </ul>
@@ -59,11 +60,11 @@
 
 <script>
   function handleOwnerProfile(evt) {
-    if(evt.target.innerText==="Mongalmoy Karmakar"){
+    if (evt.target.innerText === "Mongalmoy Karmakar") {
       openPopup1();
-    } else if(evt.target.innerText==="Souvik Sarkhel") {
+    } else if (evt.target.innerText === "Souvik Sarkhel") {
       openPopup2();
-    } 
+    }
   }
 
   function openPopup1() {
@@ -95,7 +96,6 @@
   function closePopup() {
     document.getElementById('mongalmoyProfile').style.display = "none";
     document.getElementById('souvikProfile').style.display = "none";
-    removeCoverEditPopup();
   }
 
   function openForm() {
@@ -130,23 +130,30 @@
   }
 
 
-  function handleClickOnLike(event) {
-    // document.querySelectorAll(".add-like").style.fontSize = "20px";
-    let feedElements = document.querySelectorAll(".feed");
-    console.log(event.path[2]);
-    console.log(event.path[3]);
-    feedElements.forEach(function (element) {
-      if (element === event.path[2] || element === event.path[3]) {
-        console.log(element.style.height);
-        // if(element.style.height === "18px") {
-        //   element.style.height = "19px";
-        //   element.classList.add("liked");
-        // } else {
-        //   element.style.height = "19px";
-        //   element.classList.remove("liked");
-        // }
-      }
-    })
+  function handleClickOnLike(e) {
+    console.log(e);
+  }
+
+
+  function displayEditSection(e) {
+    
+  }
+
+
+  function manageEditLinks(e) {
+    const elements = document.querySelectorAll(".account-page-heading-list ul li a");
+    for(let i=0;i<elements.length;i++){
+      elements[i].classList.remove('active');
+      elements[i].attributes[2].value="false";
+      elements[i].attributes[3].value="-1";
+    } 
+    e.target.classList.add('active');
+    e.srcElement.attributes[2].value="true";
+    e.srcElement.attributes[3].value="0";
+
+    console.log(e.srcElement.attributes[3].value="0");
+
+    displayEditSection(e);
   }
 
 
@@ -227,6 +234,7 @@
 
   function displayCoverEditPopup() {
     const element = document.getElementById('coverEditPopup');
+
     if (element.style.display === "none") {
       element.style.display = "block";
     } else {

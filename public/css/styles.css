@@ -17,6 +17,7 @@
     top: 0;
     width: 100%;
     height: 60px;
+    box-shadow: 0 1px 5px #858585;
 }
 
 .container-fluid .navbar-brand {
@@ -535,7 +536,7 @@
     color: #3333f3;
 }
 
-#root .chatbox .feed .comment-like-share div {
+#root .chatbox .feed .comment-like-share form {
     width: 180px;
     display: flex;
     align-items: center;
@@ -547,11 +548,16 @@
     border-radius: 5px;
 }
 
-#root .chatbox .feed .comment-like-share div:hover {
+#root .chatbox .feed .comment-like-share form:hover {
     background-color: #ddd;
 }
 
-#root .chatbox .feed .comment-like-share div span {
+#root .chatbox .feed .comment-like-share form i {
+    color: #2e2e2e;
+    font-size: 18px;
+}
+
+#root .chatbox .feed .comment-like-share form span {
     margin-left: 5px;
     font-size: 14px;
 }
@@ -688,7 +694,7 @@
 .start-post-div{
     position: fixed;
     right: 20px;
-    top: 90px;
+    top: 70px;
     height: 100px;
     width: 410px;
     background-color: #fff;
@@ -1015,7 +1021,8 @@
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 99;
+    z-index: 100;
+    visibility: visible;
 }
 
 .user-page-cover .edit-cover span {
@@ -1033,6 +1040,7 @@
 }
 
 .cover-edit-popup {
+    transition-delay: 0.4s;
     position: absolute;
     right: 20px;
     top: 50px;
@@ -1042,9 +1050,9 @@
     font-weight: 600;
     padding: 8px;
     padding-left: 5px;
-    display: none;
-    z-index: 99;
+    z-index: 100;
     background-color: #fff;
+    display: none;
 }
 
 .cover-edit-popup .cover-upload, .cover-edit-popup .cover-delete {
@@ -1143,12 +1151,38 @@
     display: flex;
     justify-content: center;
     width: 1000px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .userpage-other-detail {
     width: 380px;
     margin-right: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px;
+    height: 400px;
+}
+
+.userpage__userdetails {
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.userpage__userdetails i {
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+.userpage__userdetails p {
+    padding: 0;
+    margin: 0;
+    display: inline;
+    font-size: 16px;
+}
+
+.userpage__userdetails p span {
+    font-weight: 600;
 }
 
 .userpage-feed-container {
@@ -1160,6 +1194,7 @@
     display: flex;
     justify-content: center;
     width: 600px;
+    position: relative;
 }
 
 .userpage-chatbox .userpage-feed {
@@ -1341,11 +1376,15 @@
     width: 120px;
     height: 50px;
     background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     position: relative;
+    font-size: 18px;
+    text-decoration: none;
+    color: rebeccapurple;
+    text-transform: capitalize;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .jolutree-btn-grp__item:nth-child(1) {
@@ -1374,14 +1413,7 @@
     transform: translateY(0px);
 }
 
-.jolutree-btn-grp__item a {
-    font-size: 18px;
-    text-decoration: none;
-    color: rebeccapurple;
-    text-transform: capitalize;
-}
-
-.jolutree-btn-grp__item a:hover {
+.jolutree-btn-grp__item:hover {
     color: rebeccapurple;
     text-transform: capitalize;
 }
@@ -1455,7 +1487,6 @@
 
 .jolutree-user-profile-social-media {
     width: 100%;
-    height: calc(100% - 208px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1621,44 +1652,161 @@
 
 
 /******************* Acoount Page Starts *****************/
-.account-page-outer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+.account-page {
+    margin-top: 5px;
     margin-bottom: 15px;
-}
-
-.account-page-outer .account-page-inner {
-    width: 700px;
-    background-color: #fff;
-    border-radius: 5px;
     position: relative;
 }
 
-.account-page-outer .account-page-inner .edit-link {
-    color: #1b1b1b;
+.account-page-heading-list {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10;
+    z-index: 100;
+    position: fixed;
 }
 
-.account-page-outer .account-page-inner .fa-pencil-alt {
-    position: absolute;
-    font-size: 15px;
-    top: 25px;
-    right: 35px;
-    cursor: pointer;
+.account-page-heading-list div {
+    width: 800px;
 }
 
-.account-page-outer .account-page-inner .home-link {
-    font-size: 12px;
-    padding: 8px;
-}
-
-.account-page-outer .account-page-inner .home-link p {
+.account-page-heading-list ul {
+    display: flex;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.account-page-outer .account-page-inner .user-profile {
+.account-page-heading-list ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    padding: 5px 15px;
+    background-color: #fff;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.account-page-heading-list ul li a.active::after {
+    position: absolute;
+    content: "";
+    width: 200px;
+    height: 5px;
+    background-color: #3333f3;
+    left: 0;
+    bottom: -5px;
+    opacity: 1;
+    transition: all 0.5s ease-out;
+}
+
+
+.account-page-edit-section {
+    position: fixed;
+    left: 0;
+    top: 115px;
+    width: 100vw;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.account-page-edit-container {
+    width: 800px;
+    background-color: #fff;
+    padding: 0 40px;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.account-page-edit-container div {
+    padding: 15px 0;
+}
+
+
+.save-button {
+    padding: 8px 24px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #3434cf;
+    opacity: 0.8;
+    width: 96px;
+}
+
+.save-button:hover {
+    opacity: 1;
+}
+
+.delete-button {
+    padding: 8px 24px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background-color: #e90000;
+    opacity: 0.8;
+    font-weight: 500;
+    margin-left: 16px;
+}
+
+.delete-button:hover {
+    opacity: 1;
+    font-weight: 500;
+}
+
+
+
+
+
+/**************** Account Page Starts *********************/
+.account-page-outer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.account-page-inner {
+    width: 600px;
+    position: relative;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.account-page-inner .edit-link {
+    position: absolute;
+    font-size: 15px;
+    top: 15px;
+    right: 35px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #696969;
+}
+
+.account-page-inner .edit-link:hover {
+    background-color: #e2dbdb;
+}
+
+.account-page-inner .home-link {
+    font-size: 12px;
+    padding: 8px;
+}
+
+.account-page-inner .home-link p {
+    padding: 0;
+    margin: 0;
+}
+
+.account-page-inner .user-profile {
     padding: 10px 20px;
 }
 
@@ -1680,7 +1828,7 @@
 .user-profile .user-name-img .remove-dp {
     position: absolute;
     right: 5px;
-    bottom: 0px;
+    bottom: -10px;
 }
 
 .user-profile .user-name-img .remove-dp button a {
@@ -1749,56 +1897,27 @@
     margin: 10px 0;
     border-top: 1px solid #b1b1b1;
 }
-.account-page-inner .user-profile .save-button {
-    padding: 10px;
-    position: relative;
-    height: 50px;
+
+.accountpage-delete-button {
+    padding: 0;
+    margin-bottom: 20px;
 }
 
-.save-button button {
-    position: absolute;
-    left: 16px;
+.accountpage-delete-button a {
     padding: 8px 24px;
-    bottom: 20px;
     border: none;
+    outline: none;
     font-size: 14px;
     color: #fff;
-    background-color: #3434cf;
     opacity: 0.8;
-    width: 96px;
-}
-
-.save-button button:hover {
-    opacity: 1;
-}
-
-.delete-button {
-    padding: 10px;
-    position: relative;
-    height: 50px;
-}
-
-.delete-button button {
-    position: absolute;
-    right: 16px;
-    padding: 8px 24px;
-    bottom: 20px;
-    border: none;
-    font-size: 14px;
-    color: #fff;
+    font-weight: 400;
     background-color: #e90000;
-    opacity: 0.8;
-    font-weight: 500;
-}
-
-.delete-button button:hover {
-    opacity: 1;
-    font-weight: 500;
-}
-
-.delete-button button a {
     text-decoration: none;
+}
+
+.accountpage-delete-button a:hover {
     color: #fff;
+    opacity: 1;
 }
 /******************* Account Page Ends *******************/
 
