@@ -675,6 +675,6 @@ app.listen(3000, function () {
 /************************* My Work ********************************/
 
 
-app.post('/addlike', function(req, res) {
+// app.post('/addlike', function(req, res) {
   
-});
+// });
