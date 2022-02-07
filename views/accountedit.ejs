@@ -5,16 +5,20 @@
         <div>
             <ul>
                 <li>
-                    <a href="#account-page-personal-section" class="edit-links active" aria-selected="true" tabindex="0" onclick="manageEditLinks(event)">Personal</a>
+                    <a href="#account-page-personal-section" class="edit-links active" aria-selected="true" tabindex="0"
+                        onclick="manageEditLinks(event)">Personal</a>
                 </li>
                 <li>
-                    <a href="#social-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1" onclick="manageEditLinks(event)">Social</a>
+                    <a href="#social-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1"
+                        onclick="manageEditLinks(event)">Social</a>
                 </li>
                 <li>
-                    <a href="#communication-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1" onclick="manageEditLinks(event)">Communication</a>
+                    <a href="#communication-page-personal-section" class="edit-links" aria-selected="false"
+                        tabindex="-1" onclick="manageEditLinks(event)">Communication</a>
                 </li>
                 <li>
-                    <a href="#login-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1" onclick="manageEditLinks(event)">Login</a>
+                    <a href="#login-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1"
+                        onclick="manageEditLinks(event)">Login</a>
                 </li>
             </ul>
         </div>
@@ -25,105 +29,119 @@
 
             <form action="/editaccount" method="post">
 
-                <div id="account-page-personal-section">
+                <div class="accountedit-section" id="account-page-personal-section">
                     <div>
                         <h6>Upload profile picture of yourself</h6>
-                        <p>Upload files of type jpeg, jpg, png only. Max size : 1MB.</p>
+                        <p style="font-size: 12px; margin: 0; margin-bottom: 5px;">Upload files of type jpeg, jpg, png only. Max size : 1MB.</p>
                         <input type="file">
                     </div>
                     <div>
-                        <p>Your Name:</p>
+                        <h6>Your Name: <sup class="star">*</sup> </h6>
                         <input type="text" id="inputName" placeholder="Enter your name">
                     </div>
                     <div>
-                        <p>Your DOB:</p>
+                        <h6>Your DOB: <sup class="star">*</sup> </h6>
                         <input type="date">
                     </div>
                     <div>
-                        <p>Gender:</p>
-                        <input type="radio" id="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female">
-                        <label for="female">Female</label>
-                        <input type="radio" id="other">
-                        <label for="other">Other</label>
+                        <h6>Gender: <sup class="star">*</sup> </h6>
+                        <div class="gender-section" style="padding: 0;" >
+                            <div>
+                                <input class="radio" type="radio" id="male" name="gender" value="male">
+                                <label for="male">Male</label>
+                            </div>
+                            <div>
+                                <input class="radio" type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                            <div>
+                                <input class="radio" type="radio" id="other" name="gender" value="other">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-    
-                <div id="social-page-personal-section">
+
+                <hr class="accountedit-hr">
+
+                <div class="accountedit-section" id="social-page-personal-section">
                     <div>
-                        <p>Linkedin:</p>
+                        <h6>Linkedin: <sup class="star">*</sup> </h6>
                         <input type="text">
                     </div>
                     <div>
-                        <p>Github:</p>
+                        <h6>Github: <sup class="star">*</sup> </h6>
                         <input type="text">
                     </div>
                     <div>
-                        <p>Facebook:</p>
+                        <h6>Facebook: <sup class="star">*</sup> </h6>
                         <input type="text">
                     </div>
                     <div>
-                        <p>Instagram:</p>
+                        <h6>Instagram: </h6>
                         <input type="text">
                     </div>
                     <div>
-                        <p>Your Website or Blog:</p>
+                        <h6>Your Website or Blog:</h6>
                         <input type="text">
                     </div>
                 </div>
-    
-                <div id="communication-page-personal-section">
+
+                <hr class="accountedit-hr">
+
+                <div class="accountedit-section" id="communication-page-personal-section">
                     <div>
-                        <p>Email Address:</p>
+                        <h6>Email Address: <sup class="star">*</sup> </h6>
                         <input type="email">
                     </div>
                     <div>
-                        <p>Optional Email Address:</p>
+                        <h6>Optional Email Address:</h6>
                         <input type="email">
                     </div>
                     <div>
-                        <p>Current City:</p>
+                        <h6>Current City: <sup class="star">*</sup> </h6>
                         <input type="text">
                     </div>
                     <div>
-                        <p>Country:</p>
+                        <h6>Country: <sup class="star">*</sup> </h6>
                         <input type="text">
                     </div>
                     <div>
-                        <p>Address</p>
+                        <h6>Address</h6>
                         <textarea name="inputAddress" id="userAddress" cols="30" rows="2"></textarea>
                     </div>
                     <div>
-                        <p>Pincode:</p>
+                        <h6>Pincode: <sup class="star">*</sup> </h6>
                         <input type="number">
                     </div>
                     <div>
-                        <p>Contact Number:</p>
-                        <input type="number">
-                    </div>
-                </div>
-    
-                <div id="login-page-personal-section">
-                    <div>
-                        <p>Current password:</p>
-                        <input type="number">
-                    </div>
-                    <div>
-                        <p>New password:</p>
-                        <input type="number">
-                    </div>
-                    <div>
-                        <p>Confirm new password:</p>
+                        <h6>Contact Number: <sup class="star">*</sup> </h6>
                         <input type="number">
                     </div>
                 </div>
 
-                <div>
+                <hr class="accountedit-hr">
+
+                <div class="accountedit-section" id="login-page-personal-section">
+                    <div>
+                        <h6>Current password: </h6>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <h6>New password:</h6>
+                        <input type="number">
+                    </div>
+                    <div>
+                        <h6>Confirm new password:</h6>
+                        <input type="number">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
                     <button class="save-button">Save</button>
                     <button class="delete-button">Delete</button>
                 </div>
-    
+
             </form>
 
         </div>

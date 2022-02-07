@@ -20,61 +20,61 @@
           <p><%= post.posttime %></p>
         </div>
 
-        <div onclick="displayEdit()" class="three-dots">
+        <div onclick="displayEdit(event)" class="three-dots">
           <i class='bx bx-dots-horizontal-rounded'></i>
-        </div>
-
-        <div class="outer-display-edit-div" id="outer-display-edit-div">
-          <div class="inner-display-edit-div">
-
-            <div class="item">
-              <div class="item-icon">
-                <i class="far fa-bookmark"></i>
-              </div>
-              <div class="item-contents">
-                <div>
-                  <p>Save</p>
-                  <p>Save for later</p>
+          <div class="outer-display-edit-div" id="outer-display-edit-div">
+            <div class="inner-display-edit-div">
+  
+              <div class="item">
+                <div class="item-icon">
+                  <i class="far fa-bookmark"></i>
+                </div>
+                <div class="item-contents">
+                  <div>
+                    <p>Save</p>
+                    <p>Save for later</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="item">
-              <div class="item-icon">
-                <i class="fas fa-link"></i>
-              </div>
-              <div class="item-contents">
-                <div>
-                  <p>Copy link</p>
+  
+              <div class="item">
+                <div class="item-icon">
+                  <i class="fas fa-link"></i>
+                </div>
+                <div class="item-contents">
+                  <div>
+                    <p>Copy link</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <% if(post.poster===currentuser.username){ %>
-            <div class="item">
-              <div class="item-icon">
-                <i class="fas fa-pen"></i>
-              </div>
-              <div class="item-contents">
-                <div>
-                  <p>Edit post</p>
+              <% if(post.poster===currentuser.username){ %>
+              <div class="item">
+                <div class="item-icon">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="item-contents">
+                  <div>
+                    <p>Edit post</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="item">
-              <div class="item-icon">
-                <i class="fas fa-trash-alt"></i>
-              </div>
-              <div class="item-contents">
-                <div>
-                  <p>Delete post</p>
+  
+              <div class="item">
+                <div class="item-icon">
+                  <i class="fas fa-trash-alt"></i>
+                </div>
+                <div class="item-contents">
+                  <div>
+                    <p>Delete post</p>
+                  </div>
                 </div>
               </div>
+  
+              <% }%>
+  
             </div>
-
-            <% }%>
-
           </div>
+          
         </div>
 
       </div>
