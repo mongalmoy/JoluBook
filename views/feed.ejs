@@ -20,9 +20,9 @@
           <p><%= post.posttime %></p>
         </div>
 
-        <div onclick="displayEdit(event)" class="three-dots">
+        <div onclick="displayEdit('<%=post.posttime%>'+'<%Math.random%>')" class="three-dots">
           <i class='bx bx-dots-horizontal-rounded'></i>
-          <div class="outer-display-edit-div" id="outer-display-edit-div">
+          <div class="outer-display-edit-div" id="<%=post.posttime%>">
             <div class="inner-display-edit-div">
   
               <div class="item">
@@ -100,7 +100,20 @@
         <% }%>
       </div>
 
+      <div class="user-chatbox-audio-container">
+        <!-- <audio controls>
+          <source src="/uploads/1642845369330-[Songs.PK] Raaz 3 - 05 - Kya Raaz Hai.mp3">
+        </audio> -->
+      </div>
+
+      <div class="user-chatbox-video-container">
+        <!-- <video controls>
+          <source src="/video/VID20211212080322.mp4">
+        </video> -->
+      </div>
+
       <hr style="margin: 4px 0; border: 0; height: 1px;">
+
       <div class="comment-like-share">
         <form action="/addlike" method="post" onclick="submit()">
           <i class="bx bxs-like"></i>

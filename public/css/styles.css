@@ -405,7 +405,7 @@
     width: 600px;
     background-color: #fff;
     color: #494747;
-    padding: 8px 10px;
+    padding: 10px 0;
     padding-bottom: 4px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -419,6 +419,7 @@
 .chatbox .feed .user-profile-container {
     position: relative;
     height: 75px;
+    margin: 0 12px;
 }
 
 .chatbox .feed .user-profile-container .user-img {
@@ -468,7 +469,7 @@
     height: 20px;
     position: absolute;
     right: 0;
-    bottom: 5px;
+    bottom: 10px;
     font-size: 12px;
 }
 
@@ -510,8 +511,9 @@
 }
 
 #root .chatbox .feed .user-chatbox {
-    margin: 0;
-    padding: 5px 0;
+    padding: 5px;
+    margin: 0 12px;
+    margin-bottom: 8px;
 }
 
 #root .chatbox .feed .user-chatbox p {
@@ -519,10 +521,34 @@
     padding: 0;
 }
 
+#root .chatbox .feed .user-chatbox-audio-container {
+    margin: 0 12px;
+    margin-bottom: 8px;
+}
+
+.user-chatbox-audio-container audio {
+    width: 100%;
+    height: 50px;
+}
+
+#root .chatbox .feed .user-chatbox-video-container {
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.user-chatbox-video-container video {
+    width: 100%;
+    height: 300px;
+    object-fit: fill;
+    outline: none;
+    border: none;
+}
+
 #root .chatbox .feed .comment-like-share {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 8px;
 }
 
 #root .chatbox .feed .comment-like-share .bxs-like {
@@ -1319,6 +1345,8 @@
     width: 100%;
     height: 400px;
     object-fit: fill;
+    outline: none;
+    border: none;
 }
 /***************** User page ends ******************/
 
@@ -1386,7 +1414,7 @@
     text-decoration: none;
     color: rebeccapurple;
     text-transform: capitalize;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -1406,10 +1434,10 @@
     bottom: 0;
     width: 100%;
     height: 5px;
-    background-color: rebeccapurple;
     transform: translateY(10px);
-    transition: all 0.3s ease-out;
+    background-color: rebeccapurple;
     opacity: 0;
+    transition: all 0.5s ease;
 }
 
 .jolutree-btn-grp__item:hover::after {
@@ -1852,6 +1880,7 @@
     position: relative;
     background-color: #fff;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 .account-page-inner .edit-link {
@@ -1981,7 +2010,7 @@
     margin-bottom: 20px;
 }
 
-.accountpage-delete-button a {
+.accountpage-delete-button span {
     padding: 8px 24px;
     border: none;
     outline: none;
@@ -1990,11 +2019,59 @@
     opacity: 0.8;
     font-weight: 400;
     background-color: #e90000;
-    text-decoration: none;
+    cursor: pointer;
 }
 
-.accountpage-delete-button a:hover {
+.accountpage-delete-button span:hover {
     color: #fff;
+    opacity: 1;
+}
+
+.delete-account-div {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.delete-account-div h4 {
+    font-weight: 900;
+    font-size: 22px;
+    margin: 10px 0 20px;
+}
+
+.delete-account-div div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-account-div div a {
+    padding: 8px 16px;
+    margin: 15px;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-account-div div a:nth-child(1) {
+    background-color: #2ab118;
+    opacity: 0.8;
+}
+
+.delete-account-div div a:nth-child(2) {
+    background-color: #e90000;
+    opacity: 0.8;
+}
+
+.delete-account-div div a:hover {
     opacity: 1;
 }
 /******************* Account Page Ends *******************/

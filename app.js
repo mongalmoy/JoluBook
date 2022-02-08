@@ -444,7 +444,7 @@ app.get("/jolutree/:year/:dept", function (req, res) {
   } else {
     res.render('login');
   }
-  console.log(req.user);
+  // console.log(req.user);
 });
 
 

@@ -57,11 +57,20 @@
             </div>
 
             <div class="accountpage-delete-button">
-                <a href="/deleteaccount">Delete Account</a>
+                <span onclick="showDeleteAcountAlert()">Delete Account</span>
             </div>
         </div>
 
     </div>
+
+    <div class="delete-account-div" id="delete-account-div">
+        <h4>Do you want to delete your account ?</h4>
+        <div>
+            <a class="cancel-account-delete" onclick="hideDeleteAcountAlert()">Cancel</a>
+            <a href="/deleteaccount" class="permanent-account-delete">Delete</a>
+        </div>
+    </div>
+
 </div>
 
 <%- include('partials/footer'); -%>
