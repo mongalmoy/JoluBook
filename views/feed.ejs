@@ -24,7 +24,7 @@
           <i class='bx bx-dots-horizontal-rounded'></i>
           <div class="outer-display-edit-div" id="<%=post.posttime%>">
             <div class="inner-display-edit-div">
-  
+
               <div class="item">
                 <div class="item-icon">
                   <i class="far fa-bookmark"></i>
@@ -36,7 +36,7 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="item">
                 <div class="item-icon">
                   <i class="fas fa-link"></i>
@@ -58,7 +58,7 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="item">
                 <div class="item-icon">
                   <i class="fas fa-trash-alt"></i>
@@ -69,48 +69,53 @@
                   </div>
                 </div>
               </div>
-  
+
               <% }%>
-  
+
             </div>
           </div>
-          
+
         </div>
 
       </div>
 
       <div class="user-chatbox">
         <p><%=post.post%></p>
-        <% if(post.posttype==="1"){ %>
-        <a target="_blank" href="./uploads/<%=post.postfile%>"><button type="button" name="button">Click Here to see the
-            file</button></a>
-        <% }%>
+      </div>
+
+
+      <% if(post.posttype==="1"){ %>
+      <div class="user-chatbox-document-container">
+        <a target="_blank" href="./uploads/<%=post.postfile%>">Click Here to see the file</a>
+      </div>
+      <% }%>
+
+
+
+      <div class="user-chatbox-image-container">
         <% if(post.posttype==="2"){ %>
         <img style="width:350px" src="./uploads/<%=post.postfile%>" alt="Attached Image">
         <% }%>
-        <% if(post.posttype==="3"){ %>
-        <video width="400" height="300" controls>
-          <source src="./uploads/<%=post.postfile%>" type="video/mp4">
-        </video>
-        <% }%>
-        <% if(post.posttype==="4"){ %>
+      </div>
+
+
+      <% if(post.posttype==="4"){ %>
+      <div class="user-chatbox-audio-container">
         <audio controls>
           <source src="./uploads/<%=post.postfile%>" type="audio/mpeg">
         </audio>
-        <% }%>
       </div>
+      <% }%>
 
-      <div class="user-chatbox-audio-container">
-        <!-- <audio controls>
-          <source src="/uploads/1642845369330-[Songs.PK] Raaz 3 - 05 - Kya Raaz Hai.mp3">
-        </audio> -->
-      </div>
 
+      <% if(post.posttype==="3"){ %>
       <div class="user-chatbox-video-container">
-        <!-- <video controls>
-          <source src="/video/VID20211212080322.mp4">
-        </video> -->
+        <video width="400" height="300" controls>
+          <source src="./uploads/<%=post.postfile%>" type="video/mp4">
+        </video>
       </div>
+      <% }%>
+
 
       <hr style="margin: 4px 0; border: 0; height: 1px;">
 
@@ -175,50 +180,7 @@
 
     <div class="post-box-body">
       <textarea name="inputText" id="posttextarea" cols="50" rows="6" placeholder="What do you want to talk about?"
-        onkeypress="handleChange()" onkeyup="handleChange()" onchange="handleChange()"></textarea>
-    </div>
-
-    <div class="send-button">
-      <button type="submit"><i id="sendButton" class='bx bxs-send'></i></button>
-    </div>
-
-    <div class="attach-icon-div" id="attachIcons">
-      <ul>
-
-        <!-- <li>
-          <div onclick="handleCaptureButton()" id="start-camera" class="camera-holder">
-            <i class="fas fa-camera"></i>
-          </div>
-          <span class="tooltip">Camera</span>
-        </li> -->
-
-        <li>
-          <div onclick="handleAttachImage()" class="image-holder">
-            <i class="fas fa-image"></i>
-            <input class="input-file" type="file" name="postfile" accept=".png, .jpeg, .jpg,.jpe,.mp4">
-          </div>
-          <span class="tooltip">Image</span>
-        </li>
-
-        <li>
-          <div onclick="handleAttachDocument()" class="document-holder">
-            <i class="far fa-file"></i>
-            <input class="input-file" type="file" name="postfile"
-              accept=".xlsx,.xls ,.doc, .docx,.ppt, .pptx,.txt,.pdf">
-          </div>
-          <span class="tooltip">Document</span>
-        </li>
-
-        <li>
-          <div onclick="handleAttachAudio()" class="audio-holder">
-            <i class="fas fa-headphones-alt"></i>
-            <input class="input-file" type="file" name="postfile" accept=".mp3, .wav">
-          </div>
-          <span class="tooltip">Audio</span>
-        </li>
-
-      </ul>
-
+        onkeypress="handleInputTextChange()" onkeyup="handleInputTextChange()" onchange="handleInputTextChange()"></textarea>
     </div>
 
 
@@ -226,12 +188,66 @@
     <button id="capture">Capture</button>
     <canvas id="canvas" width="380" height="280"></canvas> -->
 
+    <div class="attach">
+      <div class="attach-button-container">
+        <i class='bx bxs-smile'></i>
+      </div>
+  
+      <div class="attach-button-container" onclick="dispalyAttachIcons()">
+        <i class="far fa-paperclip"></i>
 
-    <div class="attach" onclick="dispalyAttachIcons()">
-      <i class="far fa-paperclip"></i>
+        <div class="attach-icon-div" id="attachIcons">
+          <ul>
+    
+            <!-- <li>
+              <div onclick="handleCaptureButton()" id="start-camera" class="camera-holder">
+                <i class="fas fa-camera"></i>
+              </div>
+              <span class="tooltip">Camera</span>
+            </li> -->
+    
+            <li>
+              <div onclick="handleAttachImage()" class="image-holder">
+                <i class="fas fa-image"></i>
+                <input class="input-file" type="file" name="postfile" accept=".png, .jpeg, .jpg,.jpe,.mp4">
+              </div>
+              <span class="tooltip">Image</span>
+            </li>
+    
+            <li>
+              <div onclick="handleAttachDocument()" class="document-holder">
+                <i class="far fa-file"></i>
+                <input class="input-file" type="file" name="postfile"
+                  accept=".xlsx,.xls ,.doc, .docx,.ppt, .pptx,.txt,.pdf">
+              </div>
+              <span class="tooltip">Document</span>
+            </li>
+    
+            <li>
+              <div onclick="handleAttachAudio()" class="audio-holder">
+                <i class="fas fa-headphones-alt"></i>
+                <input class="input-file" type="file" name="postfile" accept=".mp3, .wav">
+              </div>
+              <span class="tooltip">Audio</span>
+            </li>
+    
+          </ul>
+    
+        </div>
+      </div>
+
+      <div class="attach-send-button">
+        <button type="submit"><i id="sendButton" class='bx bxs-send'></i></button>
+      </div>
+
     </div>
 
   </form>
+</div>
+
+
+<div class="emoji-icon-div">
+
 </div>
 
 

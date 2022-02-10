@@ -110,13 +110,15 @@
     document.getElementById('chatbox').style.opacity = 1;
   }
 
-  function handleChange() {
+  function handleInputTextChange() {
     const inputText = document.getElementById('posttextarea').value;
 
     if (inputText == "") {
       document.getElementById('sendButton').style.color = '#929292';
+      document.getElementById('posttextarea').style.border="2px solid #fff";
     } else {
       document.getElementById('sendButton').style.color = '#0734fd';
+      document.getElementById('posttextarea').style.border="2px solid #E0E0E0";
     }
   }
 
@@ -191,10 +193,10 @@
   function dispalyAttachIcons() {
     let element = document.getElementById("attachIcons");
 
-    if (element.style.display === "none") {
-      element.style.display = "block";
-    } else {
+    if (element.style.display === "block") {
       element.style.display = "none";
+    } else {
+      element.style.display = "block";
     }
   }
 
@@ -249,10 +251,10 @@
   function displayCoverEditPopup() {
     const element = document.getElementById('coverEditPopup');
 
-    if (element.style.display === "none") {
-      element.style.display = "block";
-    } else {
+    if (element.style.display === "block") {
       element.style.display = "none";
+    } else {
+      element.style.display = "block";
     }
   }
 
@@ -270,9 +272,9 @@
 
 
 
-  function showDeleteAcountAlert() {
+  function showDeleteAcountAlert(e) {
     const element=document.getElementById('delete-account-div');
-    const accountPage=document.querySelector('.account-page-inner');
+    const accountPage=document.querySelector('.account-page-edit-container');
     
     element.style.display="block";
     accountPage.style.opacity="0.2";
@@ -281,7 +283,7 @@
 
   function hideDeleteAcountAlert() {
     const element=document.getElementById('delete-account-div');
-    const accountPage=document.querySelector('.account-page-inner');
+    const accountPage=document.querySelector('.account-page-edit-container');
 
     element.style.display="none";
     accountPage.style.opacity="1";

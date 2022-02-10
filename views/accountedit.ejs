@@ -1,51 +1,57 @@
-<%=user.name%><%- include('partials/header',{myname:user.name}); -%>
+<%- include('partials/header',{myname:user.name}); -%>
 
 <div class="account-page">
+
     <div class="account-page-heading-list">
         <div>
             <ul>
                 <li>
-                    <a href="#account-page-personal-section" class="edit-links active" aria-selected="true" tabindex="0"
+                    <a href="#personal-section" class="edit-links active" aria-selected="true" tabindex="0"
                         onclick="manageEditLinks(event)">Personal</a>
                 </li>
                 <li>
-                    <a href="#social-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1"
+                    <a href="#social-section" class="edit-links" aria-selected="false" tabindex="-1"
                         onclick="manageEditLinks(event)">Social</a>
                 </li>
                 <li>
-                    <a href="#communication-page-personal-section" class="edit-links" aria-selected="false"
+                    <a href="#communication-section" class="edit-links" aria-selected="false"
                         tabindex="-1" onclick="manageEditLinks(event)">Communication</a>
                 </li>
                 <li>
-                    <a href="#login-page-personal-section" class="edit-links" aria-selected="false" tabindex="-1"
+                    <a href="#login-section" class="edit-links" aria-selected="false" tabindex="-1"
                         onclick="manageEditLinks(event)">Login</a>
                 </li>
             </ul>
         </div>
     </div>
 
+
     <div class="account-page-edit-section">
         <div class="account-page-edit-container">
 
-            <form action="/editaccount" method="post">
+            <form method="POST" action="/editaccount" enctype="multipart/form-data">
 
-                <div class="accountedit-section" id="account-page-personal-section">
+                <div class="accountedit-section" id="personal-section">
                     <div>
                         <h6>Upload profile picture of yourself</h6>
-                        <p style="font-size: 12px; margin: 0; margin-bottom: 5px;">Upload files of type jpeg, jpg, png only. Max size : 1MB.</p>
-                        <input type="file">
+                        <p style="font-size: 12px; margin: 0; margin-bottom: 5px;">Upload files of type jpeg, jpg, png
+                            only. Max size : 1MB.</p>
+                        <input name="newImg" type="file" accept=".png, .jpeg, .jpg">
                     </div>
+
                     <div>
                         <h6>Your Name: <sup class="star">*</sup> </h6>
-                        <input type="text" id="inputName" placeholder="Enter your name">
+                        <input name="name" type="text" class="name" value="<%=accountholder.name%>" readonly>
                     </div>
+
                     <div>
                         <h6>Your DOB: <sup class="star">*</sup> </h6>
                         <input type="date">
                     </div>
+
                     <div>
                         <h6>Gender: <sup class="star">*</sup> </h6>
-                        <div class="gender-section" style="padding: 0;" >
+                        <div class="gender-section" style="padding: 0;">
                             <div>
                                 <input class="radio" type="radio" id="male" name="gender" value="male">
                                 <label for="male">Male</label>
@@ -58,49 +64,71 @@
                                 <input class="radio" type="radio" id="other" name="gender" value="other">
                                 <label for="other">Other</label>
                             </div>
+
                         </div>
                     </div>
+
+                    <div class="separate-div">
+                        <h6>Currently Working At:</h6>
+                        <input name="currorg" type="text" value="<%=accountholder.currorg%>">
+                    </div>
+
+                    <div>
+                        <h6>Previously Worked At:</h6>
+                        <input name="prevorg" type="text" value="<%=accountholder.prevorg%>">
+                    </div>
+
+                    <div>
+                        <h6>Something About You:</h6>
+                        <textarea name="aboutyou" type="text" value="<%=accountholder.aboutyou%>" row="1"
+                            col="30"></textarea>
+                    </div>
+
                 </div>
 
                 <hr class="accountedit-hr">
 
-                <div class="accountedit-section" id="social-page-personal-section">
+                <div class="accountedit-section" id="social-section">
                     <div>
                         <h6>Linkedin: <sup class="star">*</sup> </h6>
-                        <input type="text">
+                        <input name="linkedin" type="text" value=<%=accountholder.linkedin%>>
                     </div>
                     <div>
                         <h6>Github: <sup class="star">*</sup> </h6>
-                        <input type="text">
+                        <input name="github" type="text" value=<%=accountholder.github%>>
+                    </div>
+                    <div>
+                        <h6>Whatsapp:</h6>
+                        <input name="whatsapp" type="number" value=<%=accountholder.whatsapp%>>
                     </div>
                     <div>
                         <h6>Facebook: <sup class="star">*</sup> </h6>
-                        <input type="text">
+                        <input name="facebook" type="text" value=<%=accountholder.facebook%>>
                     </div>
                     <div>
                         <h6>Instagram: </h6>
-                        <input type="text">
+                        <input name="instagram" type="text" value=<%=accountholder.instagram%>>
                     </div>
                     <div>
                         <h6>Your Website or Blog:</h6>
-                        <input type="text">
+                        <input name="personalwebsite" type="text" value=<%=accountholder.personalwebsite%>>
                     </div>
                 </div>
 
                 <hr class="accountedit-hr">
 
-                <div class="accountedit-section" id="communication-page-personal-section">
+                <div class="accountedit-section" id="communication-section">
                     <div>
                         <h6>Email Address: <sup class="star">*</sup> </h6>
-                        <input type="email">
+                        <input name="username" type="email" value="<%=accountholder.username%>" readonly>
                     </div>
                     <div>
                         <h6>Optional Email Address:</h6>
                         <input type="email">
                     </div>
                     <div>
-                        <h6>Current City: <sup class="star">*</sup> </h6>
-                        <input type="text">
+                        <h6>Hometown:</h6>
+                        <input name="hometown" type="text" value="<%=accountholder.hometown%>">
                     </div>
                     <div>
                         <h6>Country: <sup class="star">*</sup> </h6>
@@ -116,13 +144,13 @@
                     </div>
                     <div>
                         <h6>Contact Number: <sup class="star">*</sup> </h6>
-                        <input type="number">
+                        <input name="mobile" type="number" value="<%=accountholder.mobile%>">
                     </div>
                 </div>
 
                 <hr class="accountedit-hr">
 
-                <div class="accountedit-section" id="login-page-personal-section">
+                <div class="accountedit-section" id="login-section">
                     <div>
                         <h6>Current password: </h6>
                         <input type="number">

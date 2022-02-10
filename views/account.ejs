@@ -1,5 +1,6 @@
 <%- include('partials/header',{myname:user.name}); -%>
 
+<!-- 
 <div class="account-page-outer">
     <div class="account-page-inner">
 
@@ -12,16 +13,10 @@
         <div class="user-profile">
             <div class="user-name-img">
                 <img src="./uploads/<%=accountholder.dp%>" alt="_image">
-                <p>&emsp;<strong><%=accountholder.name%></strong></p>
-                <!-- <div class="user-img">
-                    <img src="/images/mongalmoy_img.jpg" alt="_image">
-                </div>
-                <div class="user-name">
-                    Mongalmoy Karmakar
-                </div> -->
+                <p>&emsp;<strong style="margin: 0; padding: 0; font-size: 20px;"><%=accountholder.name%></strong></p>
                 <% if(accountholder.dp!="avater.jpeg"){ %>
-                    <div class="remove-dp"><button><a href="/removedp">Remove DP</a></button></div>
-                    <% }%>
+                <div class="remove-dp"><button><a href="/removedp">Remove DP</a></button></div>
+                <% }%>
 
             </div>
 
@@ -31,6 +26,9 @@
                 <p> <span>Email:&emsp;&emsp;<strong><%=accountholder.username%></span> </strong></p>
                 <hr class="p-br">
 
+                <p> <span>Jolubook Userid:&emsp;&emsp;<strong><a href="user/<%=accountholder._id%>"><%=host%>/user/<%=accountholder._id%></a></span> </strong></p>
+                <hr class="p-br">
+                
                 <p> <span>Mobile:&emsp;&emsp;<strong><%=accountholder.mobile%></span> </strong></p>
                 <hr class="p-br">
 
@@ -71,6 +69,298 @@
         </div>
     </div>
 
+</div> -->
+
+
+
+
+
+<div class="account-page" id="accountpage">
+
+    <div class="account-page-section">
+        <div class="account-page-edit-container"  style="height: 565px; border-radius: 5px; padding: 10px 30px 20px; position: relative;">
+
+            <!-- Edit Icon -->
+            <a class="accountpage-edit-link" href="/editaccount"><i class="fas fa-pencil-alt"></i></a>
+
+            <!-- Personal Info Starts -->
+            <div class="account-section" id="personal-info">
+                <div>
+                    <h2 style="margin: 10px 0 0 0; padding: 0; padding-left: 10px; font-size: 22px; font-weight: 600;">1. Personal Information</h2>
+                </div>
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Your name :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span> <%=accountholder.name%> </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Your DOB :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Your Gender :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Currently workin at :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Previously working at :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Personal Info Ends -->
+
+
+            <!-- Social Info Starts -->
+            <div class="account-section" id="social-info">
+                <div>
+                    <h2 style="margin: 10px 0 0 0; padding: 0; padding-left: 10px; font-size: 22px; font-weight: 600;">2. Social Information</h2>
+                </div>
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Jolubook Userid :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span><a href="user/<%=accountholder._id%>"><%=host%>/user/<%=accountholder._id%></a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Linkedin :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Github :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Facebook :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Instagram :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Your website or blog :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Social Info Ends -->
+
+
+            <!-- Communication Info Starts -->
+            <div class="account-section" id="communication-info">
+                <div>
+                    <h2 style="margin: 10px 0 0 0; padding: 0; padding-left: 10px; font-size: 22px; font-weight: 600;">3. Communication Details</h2>
+                </div>
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Email :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Optional Email :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Hometown :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Country :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Adress :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Pincode :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+
+               <hr style="border: 0; margin: 0; padding: 0; border-bottom: 1px solid #b1b1b1;">
+
+                <div class="account-page-details">
+                    <div style="display: flex; align-items: center; padding: 0 4px; margin: 0;">
+                        <div class="account-page-details-name">
+                            <p>Contact Number :</p>
+                        </div>
+                        <div class="account-page-details-value">
+                            <span>  </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Communication Info Ends -->
+
+            <!-- Delete Account Button -->
+            <div class="accountpage-delete-button">
+                <span onclick="showDeleteAcountAlert(event)">Delete Account</span>
+            </div>
+
+        </div>
+
+
+        <div class="delete-account-div" id="delete-account-div">
+            <h4>Do you want to delete your account ?</h4>
+            <div>
+                <a class="cancel-account-delete" onclick="hideDeleteAcountAlert()">Cancel</a>
+                <a href="/deleteaccount" class="permanent-account-delete">Delete</a>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
-<%- include('partials/footer'); -%>
+
+<%- include('partials/footer') -%>

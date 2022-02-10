@@ -3,16 +3,23 @@
 <div class="jolutree-page" onclick="closePopup()">
     <div>
 
-        <% for(let i=0;i<7;i++){ %>
-            <div class="jolutree-row-container" style="margin-top: 10px;">
-                <%let j=(i*10)+1961%>
-                <%for(let k=j;k<(j+10);k++){%>
-                    <div class="jolutree-link-container"> <a href="/jolutree/<%=k%>/all"> <%=k%> </a> </div>
-                <%}%>
+        <% for(let i=0;i<6;i++){ %>
+        <div class="jolutree-row-container" style="margin-top: 10px;">
+            <%let j=(i*10)+1961%>
+            <%for(let k=j;k<(j+10);k++){%>
+            <div class="jolutree-link-container"> <a href="/jolutree/<%=k%>/all"> <%=k%> </a> </div>
+            <%}%>
             </div>
         <%}%>
+            <div class="jolutree-row-container" style="margin-top: 10px;">
+                <div class="jolutree-link-container"> <a href="/jolutree/2021/all">2021</a> </div>
+                <div class="jolutree-link-container"> <a href="/jolutree/2022/all">2022</a> </div>
+                <div class="jolutree-link-container"> <a href="/jolutree/2023/all">2023</a> </div>
+                <div class="jolutree-link-container"> <a href="/jolutree/2024/all">2024</a> </div>
+                <div class="jolutree-link-container"> <a href="/jolutree/2025/all">2025</a> </div>
+            </div>
 
+        </div>
     </div>
-</div>
 
-<%- include('partials/footer'); -%>
+    <%- include('partials/footer'); -%>

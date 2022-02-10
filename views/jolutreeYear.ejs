@@ -3,14 +3,14 @@
 <div>
     <div class="jolutree-year-page">
         <div style="width: 100%; margin-top: 10px; display: flex; align-items: center; justify-content: center;">
-            <div style="display: flex; align-items: center; justify-content: center;">
-                <a href="./all" class="jolutree-btn-grp__item" onclick="manageDeptLinks(event)">All</a>
-                <a href="./me" class="jolutree-btn-grp__item" onclick="manageDeptLinks(event)">ME</a>
-                <a href="./ce" class="jolutree-btn-grp__item" onclick="manageDeptLinks(event)">CE</a>
-                <a href="./ee" class="jolutree-btn-grp__item" onclick="manageDeptLinks(event)">EE</a>
-                <a href="./cse" class="jolutree-btn-grp__item" onclick="manageDeptLinks(event)">CSE</a>
-                <a href="./it" class="jolutree-btn-grp__item" onclick="manageDeptLinks(event)">IT</a>
-                <a href="./ece" class="jolutree-btn-grp__item" onclick="manageDeptLinks(event)">ECE</a>
+            <div>
+                <a href="./all" class="jolutree-btn-grp__item">All</a>
+                <a href="./me" class="jolutree-btn-grp__item">ME</a>
+                <a href="./ce" class="jolutree-btn-grp__item">CE</a>
+                <a href="./ee" class="jolutree-btn-grp__item">EE</a>
+                <a href="./cse" class="jolutree-btn-grp__item">CSE</a>
+                <a href="./it" class="jolutree-btn-grp__item">IT</a>
+                <a href="./ece" class="jolutree-btn-grp__item">ECE</a>
             </div>
         </div>
     </div>
@@ -40,12 +40,10 @@
             <hr class="jolutree-user-profile-container-divider">
             <div class="jolutree-user-profile-social-media">
                 <ul>
-                    <li><a href="https://www.linkedin.com/in/souviksarkhel/" target="_blank"><i
-                                class='bx bxl-linkedin-square'></i></a></li>
-                    <li><a href="https://github.com/souviksarkhel621" target="_blank"><i class='bx bxl-github'></i></a>
+                    <li><a href="<%=user.linkedin%>" target="_blank"><i class='bx bxl-linkedin-square'></i></a></li>
+                    <li><a href="<%=user.github%>" target="_blank"><i class='bx bxl-github'></i></a>
                     </li>
-                    <li><a href="https://www.instagram.com/the_hellslyte_/" target="_blank"><i
-                                class='bx bxl-instagram'></i></a></li>
+                    <li><a href="<%=user.instagram%>" target="_blank"><i class='bx bxl-instagram'></i></a></li>
                 </ul>
             </div>
         </div>

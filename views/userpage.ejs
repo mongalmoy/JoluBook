@@ -5,7 +5,7 @@
 
     <div class="user-page-profile-cover">
       <div class="user-page-cover">
-        <img src="/images/cover-photo.jpg" alt="cover_photo" onclick="removeCoverEditPopup();">
+        <img src="/uploads/defaultcoverpic.jpeg" alt="cover_photo" onclick="removeCoverEditPopup();">
         <div class="edit-cover"  onclick="displayCoverEditPopup()">
           <span> <i class="far fa-edit"></i> Edit</span>
         </div>
@@ -25,14 +25,14 @@
 
       <div class="user-page-profile" onclick="removeCoverEditPopup()">
         <div class="user-page-img-container">
-          <img src="/images/mongalmoy_img.jpg" alt="">
+          <img src="/uploads/<%=user.dp%>" alt="">
         </div>
 
         <div class="user-page-profile-name-details">
           <div class="user-page-profile-details">
-            <h1>Mongalmoy Karmakar</h1>
-            <h4>JGEC (2018-2022)</h4>
-            <p>Purba Barddhaman, West Bengal, India</p>
+            <h1><%=user.name%></h1>
+            <h4>JGEC (<%=user.year-4%>-<%=user.year%>)</h4>
+            <p><%=user.currcity%>,<%=user.country%></p>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
       <hr style="margin: 0 5px;" onclick="removeCoverEditPopup()">
 
       <div class="user-page-bio" onclick="removeCoverEditPopup()">
-        <span>"I would rather be despised of who I am, rather than loved by who I am not."</span>
+        <span><%=user.aboutyou%></span>
       </div>
     </div>
 
@@ -51,40 +51,44 @@
 
           <div class="userpage__userdetails">
             <i class="fas fa-briefcase"></i>
-            <p>Works at <span>Google</span></p>
+            <p>Works at <span><%=user.currorg%></span></p>
           </div>
           <div class="userpage__userdetails">
             <i class="fas fa-briefcase"></i>
-            <p>Previously worked at <span>TCS</span></p>
+            <p>Previously worked at <span><%=user.prevorg%></span></p>
           </div>
           <div class="userpage__userdetails">
             <i class="fas fa-graduation-cap"></i>
-            <p>Studied <span>Mechanical Engineering</span></p>
+            <p>Studied <span><%=user.department%></span></p>
           </div>
           <div class="userpage__userdetails">
             <i class="fas fa-map-marker-alt"></i>
-            <p>Lives in <span>Kolkata</span></p>
+            <p>From <span><%=user.hometown%></span></p>
           </div>
           <div class="userpage__userdetails">
-            <i class="fab fa-linkedin"></i>
-            <p>Linkedin</p>
+            <a href="<%=user.linkedin%>"><i class="fab fa-linkedin"></i>
+            <p>Linkedin</p></a>
+          </div>
+
+          <div class="userpage__userdetails">
+            <a href="<%=user.github%>"><i class="fab fa-github"></i>
+            <p>Github</p></a>
+
           </div>
           <div class="userpage__userdetails">
-            <i class="fab fa-github"></i>
-            <p>Github</p>
+            <a href="<%=user.instagram%>"><i class="fab fa-instagram"></i>
+            <p>Instagram</p></a>
           </div>
           <div class="userpage__userdetails">
-            <i class="fab fa-instagram"></i>
-            <p>Instagram</p>
-          </div>
-          <div class="userpage__userdetails">
-            <i class="fab fa-facebook-square"></i>
-            <p>Facebook</p>
+            <a href="<%=user.facebook%>"><i class="fab fa-facebook-square"></i>
+            <p>Facebook</p></a>
+
           </div>
 
         </div>
 
         <div class="userpage-feed-container">
+
           <div class="userpage-chatbox">
 
             <div class="userpage-feed">
@@ -117,16 +121,23 @@
                     commodi suscipit asperiores, libero corrupti id ullam eveniet autem aspernatur. Eaque error ratione
                     illo quisquam, dolores amet dolorem eos delectus cum.</p>
                 </div>
+                
+                <!-- Image started -->
+                <div class="userpage-feed-content-img">
+                  <img src="" alt="">
+                </div>
+                <!-- Image ended -->
+
                 <div class="userpage-feed-content-audio">
                   <audio controls>
-                    <source src="/uploads/1642845369330-[Songs.PK] Raaz 3 - 05 - Kya Raaz Hai.mp3">
-                  </audio>
+                    <source src="/uploads/1642845369330-[Songs.PK] Raaz 3 - 05 - Kya Raaz Hai.mp3"></audio>
                 </div>
+
                 <div class="userpage-feed-content-video">
                   <video controls>
-                    <source src="/video/VID20211212080322.mp4">
-                  </video>
+                    <source src="/video/VID20211212080322.mp4"></video>
                 </div>
+                
               </div>
 
             </div>
@@ -138,6 +149,11 @@
     </div>
 
   </div>
+
+
+
+
+  
 </div>
 
 <%- include('partials/footer'); -%>

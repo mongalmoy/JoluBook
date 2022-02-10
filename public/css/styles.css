@@ -399,6 +399,7 @@
     justify-content: center;
     margin-top: 6px;
     position: relative;
+    opacity: 0.2;
 }
 
 .chatbox .feed {
@@ -529,6 +530,20 @@
 .user-chatbox-audio-container audio {
     width: 100%;
     height: 50px;
+}
+
+.user-chatbox-image-container {
+    margin: 0;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.user-chatbox-image-container img {
+    object-fit: cover;
+    outline: none;
+    max-width: 100%;
+    max-height: 400px;
 }
 
 #root .chatbox .feed .user-chatbox-video-container {
@@ -787,8 +802,8 @@
 }
 
 .post-box-container {
-    width: 500px;
-    height: 320px;
+    width: 600px;
+    height: 400px;
     position: fixed;
     z-index: 100;
     left: 50%;
@@ -796,7 +811,7 @@
     transform: translateX(-50%);
     background-color: #fff;
     border-radius: 10px;
-    display: none;
+    display: blcok;
 }
 
 .post-box-container .post-heading {
@@ -860,7 +875,7 @@
 }
 
 .post-box-container .post-box-body {
-    padding: 10px;
+    padding: 6px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -870,9 +885,16 @@
     border: none;
     outline: none;
     color: #212224;
+    width: 100%;
+    height: 220px;
+    box-sizing: border-box;
+    resize: none;
+    padding: 0 10px;
+    overflow-y: scroll;
 }
 
-.post-box-container .send-button {
+
+/* .post-box-container .send-button {
     height: 20px;
     width: 100%;
 }
@@ -888,40 +910,82 @@
     position: absolute;
     right: 25px;
     bottom: 12px;
-}
+} */
 
 .post-box-container .send-button input {
     visibility: visible;
 }
 
+
+
 .post-box-container .attach {
     position: absolute;
-    right: 80px;
-    bottom: 15px;
+    right: 15px;
+    bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
 }
 
-.post-box-container .attach:hover {
+.post-box-container .attach-button-container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    position: relative;
+}
+
+.attach-button-container i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-box-container .attach-button-container:hover {
     background-color: #ddd;
 }
 
-.post-box-container .attach i {
+.attach-button-container .fa-paperclip {
     font-size: 20px;
     color: #929292;
     transform: rotate(180deg);
 }
 
+.bxs-smile {
+    font-size: 24px;
+    color: #929292;
+}
+
+.attach-send-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.attach-send-button button {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.attach-send-button button i {
+    visibility: visible;
+    font-size: 30px;
+    color: #929292;
+}
+
 #attachIcons {
     position: absolute;
     width: 60px;
-    right: 66px;
-    bottom: 50px;
+    bottom: 40px;
     display: none;
 }
 
@@ -1736,11 +1800,17 @@
     transition: all 0.5s ease-out;
 }
 
+.account-page-section {
+    position: relative;
+    width: 100vw;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
 
 .account-page-edit-section {
-    position: fixed;
-    left: 0;
-    top: 115px;
+    position: absolute;
+    top: 46px;
     width: 100vw;
     border-radius: 5px;
     display: flex;
@@ -1748,17 +1818,16 @@
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    width: 10px;
+    width: 6px;
     background-color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #3333f3;
-    border-radius: 5px;
+    background-color: #202431;
 }
 
 .account-page-edit-container {
@@ -1840,6 +1909,14 @@
     color: #4d4d4d;
 }
 
+.accountedit-section textarea {
+    outline: none;
+    padding: 2px 5px;
+    width: 400px;
+    color: #4d4d4d;
+    resize: none;
+}
+
 .gender-section {
     display: flex; 
     align-items: center;
@@ -1869,183 +1946,101 @@
 
 
 /**************** Account Page Starts *********************/
-.account-page-outer {
-    display: flex;
-    justify-content: center;
-    position: relative;
+#accountpage .account-page-details {
+    width: 100%;
+    color: #000;
+    padding: 0;
 }
 
-.account-page-inner {
-    width: 600px;
-    position: relative;
-    background-color: #fff;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-
-.account-page-inner .edit-link {
-    position: absolute;
-    font-size: 15px;
-    top: 15px;
-    right: 35px;
-    cursor: pointer;
+.accountpage-edit-link {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
     background-color: #fff;
+    border-radius: 50%;
+    position:absolute;
+    right: 30px;
+    top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #696969;
 }
 
-.account-page-inner .edit-link:hover {
-    background-color: #e2dbdb;
+.accountpage-edit-link:hover {
+    background-color: #ddd;
 }
 
-.account-page-inner .home-link {
-    font-size: 12px;
-    padding: 8px;
+.accountpage-edit-link i {
+    color: #929292;
 }
 
-.account-page-inner .home-link p {
+#accountpage .account-section {
+    padding: 0;
+}
+
+#accountpage .account-page-details {
+    margin: 12px 0;
+}
+
+#accountpage .account-page-details-name {
+    width: 180px;
     padding: 0;
     margin: 0;
 }
 
-.account-page-inner .user-profile {
-    padding: 10px 20px;
-}
-
-.user-profile .user-name-img {
-    position: relative;
-}
-
-
-.user-profile .user-name-img img {
-    height: 45px;
-    width: 45px;
-    object-fit: cover;
-}
-
-.user-profile .user-name-img p {
-    display: inline;
-}
-
-.user-profile .user-name-img .remove-dp {
-    position: absolute;
-    right: 5px;
-    bottom: -10px;
-}
-
-.user-profile .user-name-img .remove-dp button a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-}
-
-.user-profile .user-name-img .remove-dp button {
-    padding: 8px 24px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    color: #fff;
-    background-color: #b6b90c;
-    opacity: 0.9;
-}
-
-.user-profile .user-name-img .remove-dp button:hover {
-    opacity: 1;
-}
-
-.account-page-outer .account-page-inner .user-profile hr.main-hr {
-    border: 0;
-    border-bottom: 2px solid rgb(0, 0, 0);
-}
-
-.account-page-outer .account-page-inner .user-profile-details {
-    font-size: 13px;
-    padding-bottom: 20px;
-}
-
-.account-page-outer .account-page-inner .user-profile-details strong {
-    font-size: 13px;
-}
-
-.user-profile-details .separate-div {
-    margin-bottom: 15px;
-    padding: 0 16px;
-}
-
-.account-page-outer .account-page-inner .user-profile-details input {
-    outline: none;
-    width: 300px;
-    margin-left: 10px;
-    padding: 4px 5px;
-    border: 1px solid #b9b9b9;
-    color: #000;
-}
-
-.account-page-outer .account-page-inner .user-profile-details input:focus {
-    border-bottom: 1px solid #a0a0a0;
-}
-
-.account-page-outer .account-page-inner .user-profile-details p span {
-    font-weight: 500;
-}
-
-.account-page-outer .account-page-inner .user-profile-details p {
+#accountpage .account-page-details-name p {
+    margin: 0;
     padding: 0;
-    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 400;
 }
 
-.user-profile-details .p-br {
-    border: 0;
-    margin: 10px 0;
-    border-top: 1px solid #b1b1b1;
+#accountpage .account-page-details-value {
+    width: calc(100% - 180px);
+    padding: 0;
+}
+
+#accountpage .account-page-details-value span {
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .accountpage-delete-button {
-    padding: 0;
-    margin-bottom: 20px;
+    color: #fff;
 }
 
 .accountpage-delete-button span {
-    padding: 8px 24px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    color: #fff;
-    opacity: 0.8;
-    font-weight: 400;
+    padding: 8px 16px;
+    margin: 0;
+    text-decoration: none;
     background-color: #e90000;
+    opacity: 0.8;
     cursor: pointer;
 }
 
 .accountpage-delete-button span:hover {
-    color: #fff;
     opacity: 1;
 }
 
 .delete-account-div {
-    display: none;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: 100px;
-    padding: 20px;
-    background-color: #fff;
-    z-index: 1;
-    border-radius: 5px;
+    z-index: 10;
+    background-color: #302c2c;
+    color: #fff;
+    padding: 16px;
 }
 
 .delete-account-div h4 {
-    font-weight: 900;
-    font-size: 22px;
-    margin: 10px 0 20px;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 26px;
 }
 
 .delete-account-div div {
+    padding: 20px;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2053,22 +2048,20 @@
 
 .delete-account-div div a {
     padding: 8px 16px;
-    margin: 15px;
-    color: #fff;
-    text-decoration: none;
-    outline: none;
-    border: none;
+    background-color: #252525;
+    margin: 0 15px;
     cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
 }
 
 .delete-account-div div a:nth-child(1) {
-    background-color: #2ab118;
-    opacity: 0.8;
+    background-color: #106826;
 }
 
 .delete-account-div div a:nth-child(2) {
     background-color: #e90000;
-    opacity: 0.8;
 }
 
 .delete-account-div div a:hover {
