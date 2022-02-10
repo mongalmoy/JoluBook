@@ -290,6 +290,22 @@
   }
 
 
+  function displayAllEmojies() {
+    const element = document.getElementById("emoji-icon-container");
+    if(element.style.display==="block") {
+      element.style.display="none";
+    } else {
+      element.style.display="block";
+    }
+  }
+
+
+  function appendEmojiToTextarea(event) {
+    document.getElementById("posttextarea").value+=event.srcElement.innerText;
+    handleInputTextChange();
+  }
+
+
 </script>
 
 </body>

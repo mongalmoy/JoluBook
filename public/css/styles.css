@@ -399,7 +399,6 @@
     justify-content: center;
     margin-top: 6px;
     position: relative;
-    opacity: 0.2;
 }
 
 .chatbox .feed {
@@ -811,7 +810,7 @@
     transform: translateX(-50%);
     background-color: #fff;
     border-radius: 10px;
-    display: blcok;
+    display: none;
 }
 
 .post-box-container .post-heading {
@@ -887,9 +886,10 @@
     color: #212224;
     width: 100%;
     height: 220px;
+    margin: 0 10px;
     box-sizing: border-box;
     resize: none;
-    padding: 0 10px;
+    padding: 4px 6px;
     overflow-y: scroll;
 }
 
@@ -928,7 +928,7 @@
     cursor: pointer;
 }
 
-.post-box-container .attach-button-container {
+.attach-button-container, .open-emoji-div {
     width: 40px;
     height: 40px;
     display: flex;
@@ -946,8 +946,52 @@
     justify-content: center;
 }
 
-.post-box-container .attach-button-container:hover {
+.open-emoji-div:hover {
     background-color: #ddd;
+}
+
+.emoji-icon-container {
+    padding: 0;
+    position: absolute;
+    bottom: 50px;
+    left: 15px;
+    padding: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #8f8f8f;
+    overflow-y: scroll;
+    height: 240px;
+    display: none;
+}
+
+.emoji-icon-container h3 {
+    font-size: 13px;
+    font-weight: normal;
+    font-family: inherit;
+    color: #647274;
+    margin: 0 5px;
+    padding: 5px 0;
+}
+
+.emoji-icon-row {
+    padding: 0;
+    display: flex;
+}
+
+.emoji-icon-row .emoji-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 2px;
+}
+
+.emoji-icon-row .emoji-icon:hover {
+    background-color: #ececec;
 }
 
 .attach-button-container .fa-paperclip {
@@ -1818,16 +1862,16 @@
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-    width: 6px;
+    width: 4px;
     background-color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #202431;
+    background-color: #15171d;
 }
 
 .account-page-edit-container {
