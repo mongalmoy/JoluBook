@@ -191,6 +191,8 @@
 
 
   function dispalyAttachIcons() {
+    document.getElementById("emoji-icon-container").style.display="none";
+
     let element = document.getElementById("attachIcons");
 
     if (element.style.display === "block") {
@@ -291,6 +293,8 @@
 
 
   function displayAllEmojies() {
+    document.getElementById("attachIcons").style.display="none";
+
     const element = document.getElementById("emoji-icon-container");
     if(element.style.display==="block") {
       element.style.display="none";
