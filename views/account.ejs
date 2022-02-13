@@ -83,8 +83,27 @@
             <!-- Edit Icon -->
             <a class="accountpage-edit-link" href="/editaccount"><i class="fas fa-pencil-alt"></i></a>
 
+            <div class="account-page-name-img">
+                <div style="display: flex; align-items: center; padding: 10px 0; position: relative;">
+                    <div class="img">
+                        <img src="/images/mongalmoy_img.jpg" alt="">
+                        <div class="camera-icon" onclick="showAccPageRemoveUploadButton()">
+                            <i class='bx bxs-camera'></i>
+                        </div>
+                        <input id="AccPageInputProfile" style="display: none;" type="file" accept=".png, .jpg, .jpeg" name="inputProfileImg">
+                        <div class="upload-remove" id="account-page-dp-upload-remove">
+                            <p onclick="document.getElementById('AccPageInputProfile').click()">Upload photo</p>
+                            <p>Remove photo</p>
+                        </div>
+                    </div>
+                    <div class="name" onclick="removeAccPageRemoveUploadButton()">
+                        <h4>Mongalmoy Karmakar</h4>
+                    </div>
+                </div>
+            </div>
+
             <!-- Personal Info Starts -->
-            <div class="account-section" id="personal-info">
+            <div class="account-section" id="personal-info" onclick="removeAccPageRemoveUploadButton()">
                 <div>
                     <h2 style="margin: 10px 0 0 0; padding: 0; padding-left: 10px; font-size: 22px; font-weight: 600;">1. Personal Information</h2>
                 </div>
@@ -159,7 +178,7 @@
 
 
             <!-- Social Info Starts -->
-            <div class="account-section" id="social-info">
+            <div class="account-section" id="social-info" onclick="removeAccPageRemoveUploadButton()">
                 <div>
                     <h2 style="margin: 10px 0 0 0; padding: 0; padding-left: 10px; font-size: 22px; font-weight: 600;">2. Social Information</h2>
                 </div>
@@ -246,7 +265,7 @@
 
 
             <!-- Communication Info Starts -->
-            <div class="account-section" id="communication-info">
+            <div class="account-section" id="communication-info" onclick="removeAccPageRemoveUploadButton()">
                 <div>
                     <h2 style="margin: 10px 0 0 0; padding: 0; padding-left: 10px; font-size: 22px; font-weight: 600;">3. Communication Details</h2>
                 </div>
@@ -350,7 +369,7 @@
         </div>
 
 
-        <div class="delete-account-div" id="delete-account-div">
+        <div class="delete-account-div" id="delete-account-div" onclick="removeAccPageRemoveUploadButton()">
             <h4>Do you want to delete your account ?</h4>
             <div>
                 <a class="cancel-account-delete" onclick="hideDeleteAcountAlert()">Cancel</a>

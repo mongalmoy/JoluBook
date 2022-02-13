@@ -56,25 +56,35 @@
                                         <option value="ECE">Electronics and Communication Engineering</option>
                                         <option value="EE">Electrical Engineering</option>
                                     </select>
-                                    <div class="current-position">
-                                        <input placeholder='Current Position' type="text" name="currorg" required />
+                                </div>
+                                <div class="current-position">
+                                    <input placeholder='Current Position' type="text" name="currorg" required />
+                                </div>
+                                <div class='input-email' style="display: flex;">
+                                    <input placeholder='Email' type="email" name="username" required />
+                                    <span id="registerPageVerifyButton" onclick="otpPopup()">Verify</span>
+                                    <div class="verified">
+                                        <svg style="fill: green; margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                        <span>verified</span>
                                     </div>
-                                    <div class='input-email'>
-                                        <input placeholder='Email' type="email" name="username" required />
-                                    </div>
-                                    <div class='input-password'>
-                                        <input placeholder='Password' type="password" name="password" required />
-                                    </div>
-                                    <div class='register-button'>
-                                        <button type='submit'>Register</button>
-                                    </div>
+                                </div>
+                                <div class="confirm-otp">
+                                    <input type="text" placeholder="Enter OTP" name="otp" >
+                                </div>
+                                <div class='input-password'>
+                                    <input placeholder='Password' type="password" name="password" required />
+                                </div>
+                                <div class='register-button'>
+                                    <button type='submit'>Register</button>
                                 </div>
                             </div>
                         </form>
                     </div>
 
-                    <div class="convert-div">
-                        <p>Already have an account? <span><a href="login">Log in</a></span></p>
+                    <div class="convert-div" >
+                        <p>Already have an account? <span><a href="/login">Log in</a></span></p>
                     </div>
                 </div>
             </div>
@@ -82,4 +92,13 @@
     </div>
 
 </body>
+
+
+<script>
+    function otpPopup() {
+        let otpValue = prompt("Enter the OTP value");
+    }
+</script>
+
+
 </html>

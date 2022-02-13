@@ -262,13 +262,12 @@
 
 .row .col-6 .right-div {
     width: 650px;
-    height: 500px;
     background-color: #fff;
     border-radius: 5px;
 }
 
 .row .col-6 .right-div .form-div {
-    height: 450px;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -296,7 +295,7 @@
 
 .form-div form .register-form .input-name input {
     outline: none;
-    width: 450px;
+    width: 100%;
     height: 35px;
     color: #041C32;
     padding-left: 5px;
@@ -322,41 +321,96 @@
 }
 
 .form-div form .register-form .current-position input {
-    outline: none;
-    width: 450px;
+    width: 100%;
     height: 35px;
     color: #041C32;
     padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.form-div form .register-form .input-email  {
     margin-bottom: 15px;
 }
 
 .form-div form .register-form .input-email input {
     outline: none;
-    width: 450px;
+    width: 100%;
     height: 35px;
     color: #041C32;
     padding-left: 5px;
-    margin-bottom: 15px;
+}
+
+.input-email span {
+    margin-left: 10px;
+    height: 35px;
+    background-color: green;
+    opacity: 0.8;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-email span:hover {
+    opacity: 1;
+}
+
+.verified {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.verified span {
+    display: none;
+    position: absolute;
+    right: -75px;
+    top: 4px;
+    padding: 0 8px;
+    height: 24px;
+    margin-left: 5px;
+    background-color: #2c2c2c;
+    color: #fff;
+    cursor: none;
+    transition: all 0.5s ease;
+}
+
+.verified:hover span {
+    display: block;
 }
 
 .form-div form .register-form .input-password input {
     outline: none;
-    width: 450px;
+    width: 100%;
     height: 35px;
     color: #041C32;
     padding-left: 5px;
     margin-bottom: 15px;
 }
 
+.form-div form .register-form .confirm-otp input {
+    outline: none;
+    padding-left: 5px;
+    height: 35px;
+    width: 100%;
+    color: #041C32;
+    margin-bottom: 15px;
+}
+
 .form-div form .register-form .register-button {
-    height: 100px;
     position: relative;
+    width: 100%;
+    height: 70px;
 }
 
 .form-div form .register-form .register-button button {
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    top: 10px;
     outline: none;
     border: none;
     width: 150px;
@@ -366,6 +420,10 @@
     color: #fff;
     font-weight: 400;
     letter-spacing: 1px;
+}
+
+.right-div .convert-div {
+    z-index: 99;
 }
 
 .right-div .convert-div p {
@@ -510,18 +568,90 @@
     cursor: pointer;
 }
 
-#root .chatbox .feed .user-chatbox {
+.chatbox .feed .user-chatbox {
     padding: 5px;
     margin: 0 12px;
     margin-bottom: 8px;
 }
 
-#root .chatbox .feed .user-chatbox p {
+.chatbox .feed .user-chatbox p {
     margin: 0;
     padding: 0;
 }
 
-#root .chatbox .feed .user-chatbox-audio-container {
+.feed .user-chatbox-document-container {
+    margin: 4px 12px;
+    margin-left: 16px;
+    padding: 6px;
+    background-color: rgba(11,20,26,0.75);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.user-chatbox-document-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.document-type__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.document-type__img svg {
+    width: 32px;
+    height: 32px;
+}
+
+.document-type__img img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.user-chatbox-document-link .document__name {
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+    height: 40px;
+}
+
+.document__name a {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.document__name a:hover {
+    text-decoration: underline;
+    color: #73f5f5;
+}
+
+.document__download-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.document__download-btn svg {
+    width: 16px;
+    height: 16px;
+    font-size: 500;
+    color: #aebac1;
+}
+
+.feed .user-chatbox-audio-container {
     margin: 0 12px;
     margin-bottom: 8px;
 }
@@ -928,7 +1058,7 @@
     cursor: pointer;
 }
 
-.attach-button-container, .open-emoji-div {
+.attach-button-container, .attach-button__items {
     width: 40px;
     height: 40px;
     display: flex;
@@ -940,13 +1070,13 @@
     position: relative;
 }
 
-.attach-button-container i {
+.attach-button__items i {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.open-emoji-div:hover {
+.attach-button__items:hover {
     background-color: #ddd;
 }
 
@@ -1458,6 +1588,20 @@
     outline: none;
     border: none;
 }
+
+.userpage-feed-content-img {
+    padding: 0 8px;
+    margin: 0 0 12px 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.userpage-feed-content-img img {
+    max-width: 600px;
+    max-height: 400px;
+    object-fit: cover;
+}
 /***************** User page ends ******************/
 
 
@@ -1886,8 +2030,100 @@
 
 .account-page-edit-container div {
     padding: 15px 0;
+    padding-bottom: 0;
 }
 
+.account-page-name-img {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px dashed #5a5a5a;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.account-page-name-img .img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+}
+
+.account-page-name-img .img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.account-page-name-img .img .upload-remove {
+    position: absolute;
+    left: 100px;
+    bottom: -20px;
+    padding: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 5px #5c6063;
+    z-index: 9;
+    width: 150px;
+    border-radius: 6px;
+    display: none;
+}
+
+.account-page-name-img .img .upload-remove p {
+    margin: 0;
+    padding: 4px 8px;
+    color: #475455;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.account-page-name-img .img .upload-remove p:hover {
+    background-color: #ddd;
+}
+
+.account-page-name-img .img .camera-icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.account-page-name-img .img .camera-icon:hover {
+    opacity: 1;
+}
+
+.account-page-name-img .img .camera-icon i {
+    opacity: 1;
+    font-size: 24px;
+    position: relative;
+}
+
+.account-page-name-img .name {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.account-page-name-img .name h4 {
+    font-weight: 600;
+    font-size: 40px;
+    padding-left: 15px;
+    line-height: 60px;
+    font-family: 'Lobster', cursive;
+}
 
 .save-button {
     padding: 8px 24px;
@@ -2076,6 +2312,7 @@
     background-color: #302c2c;
     color: #fff;
     padding: 16px;
+    display: none;
 }
 
 .delete-account-div h4 {
