@@ -17,12 +17,12 @@
         </div>
         <div class="post-time-div">
           <i class="fas fa-globe-asia"></i>
-          <p><%= post.posttime %></p>
+          <p> <%= post.posttime %> </p>
         </div>
 
-        <div onclick="displayEdit('<%=post.posttime%>'+'<%Math.random%>')" class="three-dots">
-          <i class='bx bx-dots-horizontal-rounded'></i>
-          <div class="outer-display-edit-div" id="<%=post.posttime%>">
+        <div class="three-dots">
+          <i onclick="displayEdit('<%=post.postid%>')" class='bx bx-dots-horizontal-rounded'></i>
+          <div class="outer-display-edit-div" id="<%=post.postid%>">
             <div class="inner-display-edit-div">
 
               <div class="item">
@@ -48,7 +48,7 @@
                 </div>
               </div>
               <% if(post.poster===currentuser.username){ %>
-              <div class="item">
+              <div class="item" onclick="editAPost('<%=post.postid%>', '<%=post.postid+1%>')">
                 <div class="item-icon">
                   <i class="fas fa-pen"></i>
                 </div>
@@ -59,7 +59,7 @@
                 </div>
               </div>
 
-              <div class="item">
+              <div class="item" onclick="deleteAPost('<%=post.postid%>')">
                 <div class="item-icon">
                   <i class="fas fa-trash-alt"></i>
                 </div>
@@ -80,7 +80,8 @@
       </div>
 
       <div class="user-chatbox">
-        <p class="user-chatbox-post"><%=post.post%></p>
+        <p id="<%= post.postid+1 %>" dir="ltr" class=" posttextstyle user-chatbox-post"><%=post.post%></p>
+        <!-- <span>hello <br> world</span> -->
       </div>
 
 
@@ -88,7 +89,7 @@
       <div style="width: 100%; display: flex; align-items: center;">
         <div class="user-chatbox-document-container">
           <div class="user-chatbox-document-link" target="_blank" href="./uploads/<%=post.postfile%>">
-            <div style="display: flex; align-items: center;">
+            <div style="display: flex; align-items: center; position: relative; width: 100%;">
 
               <div class="document-type__img">
                 <!-- pdf -->
@@ -118,12 +119,14 @@
               </div>
 
               <div class="document__download-btn">
-                <div style="height: 32px; width: 32px; border-radius: 50%; border: 2px solid #aebac1; display: flex; align-items: center; justify-content: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                  </svg>
-                </div>
+                <a style="text-decoration: none;" href="./uploads/<%=post.postfile%>" download="Welding.pdf">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                      <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                      <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                  </div>
+                </a>
               </div>
 
             </div>
@@ -205,7 +208,8 @@
 
 <div class="post-box-container" id="sendFormDiv" onclick="closePopup()">
 
-  <form action="/addpost" method="POST" enctype="multipart/form-data">
+  <form id="sendFormDivForm" action="/addpost" method="POST" enctype="multipart/form-data">
+
     <div class="post-heading">
       <div>
         <p>Create a post</p>
@@ -225,7 +229,7 @@
 
     <div class="post-box-body">
       <textarea name="inputText" id="posttextarea" cols="50" rows="6" placeholder="What do you want to talk about?"
-        onkeypress="handleInputTextChange()" onkeyup="handleInputTextChange()" onchange="handleInputTextChange()"></textarea>
+        onkeypress="handleInputText(event)" onkeyup="handleInputTextChange()" onkeydown="handleInputTextChange()" onchange="handleInputTextChange()"></textarea>
     </div>
 
 
@@ -375,7 +379,7 @@
       </div>
 
     </div>
-
+    <input style="display: none;" id="formPostIdCarrier" type="text" name="EditedPostId" value="">
   </form>
 </div>
 
